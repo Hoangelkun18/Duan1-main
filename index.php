@@ -13,7 +13,6 @@ require_once './controllers/HomeClient.php';
 // Route
 $act = $_GET['act'] ?? '/';
 
-// Để bảo bảo tính chất chỉ gọi 1 hàm Controller để xử lý request thì mình sử dụng match
 
 match ($act) {
     // Trang chủ
@@ -34,6 +33,8 @@ match ($act) {
     'category_edit'  => (new HomeAdmin())->categoryEdit(),
     
     'category_create'  => (new HomeAdmin())->categoryCreate(),
+    // Thêm vào danh sách route trong index.php
+'category_delete'  => (new HomeAdmin())->categoryDelete(),
 
     //----------------------------------------------------------------------- 
 };

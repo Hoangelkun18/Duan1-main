@@ -2,6 +2,7 @@
     <div class="container-xxl">
 
         <div class="row">
+            <?php foreach ($categories as $category): ?>
             <div class="col-md-6 col-xl-3">
                 <div class="card">
                     <div class="card-body text-center">
@@ -10,45 +11,11 @@
                             <img src="/Duan1-main/public/admin/assets_admin/images/product/p-1.png" alt=""
                                 class="avatar-xl">
                         </div>
-                        <h4 class="mt-3 mb-0">Fashion Categories</h4>
+                        <h4 class="mt-3 mb-0"><?= $category['ten_dm'] ?></h4>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-xl-3">
-                <div class="card">
-                    <div class="card-body text-center">
-                        <div class="rounded bg-primary-subtle d-flex align-items-center justify-content-center mx-auto">
-                            <img src="/Duan1-main/public/admin/assets_admin/images/product/p-6.png" alt=""
-                                class="avatar-xl">
-                        </div>
-                        <h4 class="mt-3 mb-0">Electronics Headphone</h4>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-xl-3">
-                <div class="card">
-                    <div class="card-body text-center">
-                        <div class="rounded bg-warning-subtle d-flex align-items-center justify-content-center mx-auto">
-                            <img src="/Duan1-main/public/admin/assets_admin/images/product/p-7.png" alt=""
-                                class="avatar-xl">
-                        </div>
-                        <h4 class="mt-3 mb-0">Foot Wares</h4>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-xl-3">
-                <div class="card">
-                    <div class="card-body text-center">
-                        <div class="rounded bg-info-subtle d-flex align-items-center justify-content-center mx-auto">
-                            <img src="/Duan1-main/public/admin/assets_admin/images/product/p-9.png" alt=""
-                                class="avatar-xl">
-                        </div>
-                        <h4 class="mt-3 mb-0">Eye Ware & Sunglass</h4>
-                    </div>
-                </div>
-            </div>
+            <?php endforeach; ?>
         </div>
 
         <div class="row">
@@ -57,8 +24,8 @@
                     <div class="card-header d-flex justify-content-between align-items-center gap-1">
                         <h4 class="card-title flex-grow-1">All Categories List</h4>
 
-                        <a href="product-add.html" class="btn btn-sm btn-primary">
-                            Add Product
+                        <a href="?act=category_create" class="btn btn-sm btn-primary">
+                            Add Category
                         </a>
 
                         <div class="dropdown">
@@ -88,19 +55,20 @@
                                             </div>
                                         </th>
                                         <th>Categories</th>
-                                        <th>Starting Price</th>
-                                        <th>Create by</th>
+                                        <th>Description</th>
                                         <th>ID</th>
-                                        <th>Product Stock</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <?php foreach ($categories as $category): ?>
                                     <tr>
                                         <td>
                                             <div class="form-check">
-                                                <input type="checkbox" class="form-check-input" id="customCheck2">
-                                                <label class="form-check-label" for="customCheck2"></label>
+                                                <input type="checkbox" class="form-check-input"
+                                                    id="customCheck<?= $category['id'] ?>">
+                                                <label class="form-check-label"
+                                                    for="customCheck<?= $category['id'] ?>"></label>
                                             </div>
                                         </td>
                                         <td>
@@ -110,337 +78,39 @@
                                                     <img src="/Duan1-main/public/admin/assets_admin/images/product/p-1.png"
                                                         alt="" class="avatar-md">
                                                 </div>
-                                                <p class="text-dark fw-medium fs-15 mb-0">Fashion Men , Women & Kid's
-                                                </p>
+                                                <p class="text-dark fw-medium fs-15 mb-0"><?= $category['ten_dm'] ?></p>
                                             </div>
-
                                         </td>
-                                        <td>$80 to $400</td>
-                                        <td>Seller</td>
-                                        <td>FS16276</td>
-                                        <td>46233</td>
+                                        <td><?= $category['mo_ta'] ?></td>
+                                        <td><?= $category['id'] ?></td>
                                         <td>
                                             <div class="d-flex gap-2">
                                                 <a href="#!" class="btn btn-light btn-sm">
                                                     <iconify-icon icon="solar:eye-broken" class="align-middle fs-18">
                                                     </iconify-icon>
                                                 </a>
-                                                <a href="#!" class="btn btn-soft-primary btn-sm">
+                                                <a href="?act=category_edit&id=<?= $category['id'] ?>"
+                                                    class="btn btn-soft-primary btn-sm">
                                                     <iconify-icon icon="solar:pen-2-broken" class="align-middle fs-18">
                                                     </iconify-icon>
                                                 </a>
-                                                <a href="#!" class="btn btn-soft-danger btn-sm">
+                                                <a href="?act=category_delete&id=<?= $category['id'] ?>"
+                                                    class="btn btn-soft-danger btn-sm"
+                                                    onclick="return confirm('Bạn có chắc chắn muốn xóa danh mục này?')">
                                                     <iconify-icon icon="solar:trash-bin-minimalistic-2-broken"
                                                         class="align-middle fs-18"></iconify-icon>
                                                 </a>
                                             </div>
                                         </td>
                                     </tr>
-
-                                    <tr>
-                                        <td>
-                                            <div class="form-check">
-                                                <input type="checkbox" class="form-check-input" id="customCheck2">
-                                                <label class="form-check-label" for="customCheck2">&nbsp;</label>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="d-flex align-items-center gap-2">
-                                                <div
-                                                    class="rounded bg-light avatar-md d-flex align-items-center justify-content-center">
-                                                    <img src="/Duan1-main/public/admin/assets_admin/images/product/p-2.png"
-                                                        alt="" class="avatar-md">
-                                                </div>
-                                                <div>
-                                                    <p class="text-dark fw-medium fs-15 mb-0">Women Hand Bag</p>
-                                                </div>
-                                            </div>
-
-                                        </td>
-                                        <td>$120 to $500</td>
-                                        <td>Admin</td>
-                                        <td>HB73029</td>
-                                        <td>2739</td>
-                                        <td>
-                                            <div class="d-flex gap-2">
-                                                <a href="#!" class="btn btn-light btn-sm">
-                                                    <iconify-icon icon="solar:eye-broken" class="align-middle fs-18">
-                                                    </iconify-icon>
-                                                </a>
-                                                <a href="#!" class="btn btn-soft-primary btn-sm">
-                                                    <iconify-icon icon="solar:pen-2-broken" class="align-middle fs-18">
-                                                    </iconify-icon>
-                                                </a>
-                                                <a href="#!" class="btn btn-soft-danger btn-sm">
-                                                    <iconify-icon icon="solar:trash-bin-minimalistic-2-broken"
-                                                        class="align-middle fs-18"></iconify-icon>
-                                                </a>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-
-                                    <tr>
-                                        <td>
-                                            <div class="form-check">
-                                                <input type="checkbox" class="form-check-input" id="customCheck2">
-                                                <label class="form-check-label" for="customCheck2">&nbsp;</label>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="d-flex align-items-center gap-2">
-                                                <div
-                                                    class="rounded bg-light avatar-md d-flex align-items-center justify-content-center">
-                                                    <img src="/Duan1-main/public/admin/assets_admin/images/product/p-4.png"
-                                                        alt="" class="avatar-md">
-                                                </div>
-                                                <div>
-                                                    <p class="text-dark fw-medium fs-15 mb-0">Cap and Hat</p>
-                                                </div>
-                                            </div>
-
-                                        </td>
-                                        <td>$50 to $200</td>
-                                        <td>Admin</td>
-                                        <td>CH492-9</td>
-                                        <td>1829</td>
-                                        <td>
-                                            <div class="d-flex gap-2">
-                                                <a href="#!" class="btn btn-light btn-sm">
-                                                    <iconify-icon icon="solar:eye-broken" class="align-middle fs-18">
-                                                    </iconify-icon>
-                                                </a>
-                                                <a href="#!" class="btn btn-soft-primary btn-sm">
-                                                    <iconify-icon icon="solar:pen-2-broken" class="align-middle fs-18">
-                                                    </iconify-icon>
-                                                </a>
-                                                <a href="#!" class="btn btn-soft-danger btn-sm">
-                                                    <iconify-icon icon="solar:trash-bin-minimalistic-2-broken"
-                                                        class="align-middle fs-18"></iconify-icon>
-                                                </a>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>
-                                            <div class="form-check">
-                                                <input type="checkbox" class="form-check-input" id="customCheck2">
-                                                <label class="form-check-label" for="customCheck2">&nbsp;</label>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="d-flex align-items-center gap-2">
-                                                <div
-                                                    class="rounded bg-light avatar-md d-flex align-items-center justify-content-center">
-                                                    <img src="/Duan1-main/public/admin/assets_admin/images/product/p-6.png"
-                                                        alt="" class="avatar-md">
-                                                </div>
-                                                <div>
-                                                    <p class="text-dark fw-medium fs-15 mb-0">Electronics Headphone</p>
-                                                </div>
-                                            </div>
-
-                                        </td>
-                                        <td>$100 to $700</td>
-                                        <td>Seller</td>
-                                        <td>EC23818</td>
-                                        <td>1902</td>
-                                        <td>
-                                            <div class="d-flex gap-2">
-                                                <a href="#!" class="btn btn-light btn-sm">
-                                                    <iconify-icon icon="solar:eye-broken" class="align-middle fs-18">
-                                                    </iconify-icon>
-                                                </a>
-                                                <a href="#!" class="btn btn-soft-primary btn-sm">
-                                                    <iconify-icon icon="solar:pen-2-broken" class="align-middle fs-18">
-                                                    </iconify-icon>
-                                                </a>
-                                                <a href="#!" class="btn btn-soft-danger btn-sm">
-                                                    <iconify-icon icon="solar:trash-bin-minimalistic-2-broken"
-                                                        class="align-middle fs-18"></iconify-icon>
-                                                </a>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-
-                                    <tr>
-                                        <td>
-                                            <div class="form-check">
-                                                <input type="checkbox" class="form-check-input" id="customCheck2">
-                                                <label class="form-check-label" for="customCheck2">&nbsp;</label>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="d-flex align-items-center gap-2">
-                                                <div
-                                                    class="rounded bg-light avatar-md d-flex align-items-center justify-content-center">
-                                                    <img src="/Duan1-main/public/admin/assets_admin/images/product/p-7.png"
-                                                        alt="" class="avatar-md">
-                                                </div>
-                                                <div>
-                                                    <p class="text-dark fw-medium fs-15 mb-0">Foot Wares</p>
-                                                </div>
-                                            </div>
-
-                                        </td>
-                                        <td>$70 to $400</td>
-                                        <td>Seller</td>
-                                        <td>FW11009</td>
-                                        <td>2733</td>
-                                        <td>
-                                            <div class="d-flex gap-2">
-                                                <a href="#!" class="btn btn-light btn-sm">
-                                                    <iconify-icon icon="solar:eye-broken" class="align-middle fs-18">
-                                                    </iconify-icon>
-                                                </a>
-                                                <a href="#!" class="btn btn-soft-primary btn-sm">
-                                                    <iconify-icon icon="solar:pen-2-broken" class="align-middle fs-18">
-                                                    </iconify-icon>
-                                                </a>
-                                                <a href="#!" class="btn btn-soft-danger btn-sm">
-                                                    <iconify-icon icon="solar:trash-bin-minimalistic-2-broken"
-                                                        class="align-middle fs-18"></iconify-icon>
-                                                </a>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>
-                                            <div class="form-check">
-                                                <input type="checkbox" class="form-check-input" id="customCheck2">
-                                                <label class="form-check-label" for="customCheck2">&nbsp;</label>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="d-flex align-items-center gap-2">
-                                                <div
-                                                    class="rounded bg-light avatar-md d-flex align-items-center justify-content-center">
-                                                    <img src="/Duan1-main/public/admin/assets_admin/images/product/p-8.png"
-                                                        alt="" class="avatar-md">
-                                                </div>
-                                                <div>
-                                                    <p class="text-dark fw-medium fs-15 mb-0">Wallet Categories</p>
-                                                </div>
-                                            </div>
-
-                                        </td>
-                                        <td>$120 to $300</td>
-                                        <td>Admin</td>
-                                        <td>WL38299</td>
-                                        <td>890</td>
-                                        <td>
-                                            <div class="d-flex gap-2">
-                                                <a href="#!" class="btn btn-light btn-sm">
-                                                    <iconify-icon icon="solar:eye-broken" class="align-middle fs-18">
-                                                    </iconify-icon>
-                                                </a>
-                                                <a href="#!" class="btn btn-soft-primary btn-sm">
-                                                    <iconify-icon icon="solar:pen-2-broken" class="align-middle fs-18">
-                                                    </iconify-icon>
-                                                </a>
-                                                <a href="#!" class="btn btn-soft-danger btn-sm">
-                                                    <iconify-icon icon="solar:trash-bin-minimalistic-2-broken"
-                                                        class="align-middle fs-18"></iconify-icon>
-                                                </a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="form-check">
-                                                <input type="checkbox" class="form-check-input" id="customCheck2">
-                                                <label class="form-check-label" for="customCheck2">&nbsp;</label>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="d-flex align-items-center gap-2">
-                                                <div
-                                                    class="rounded bg-light avatar-md d-flex align-items-center justify-content-center">
-                                                    <img src="/Duan1-main/public/admin/assets_admin/images/product/p-11.png"
-                                                        alt="" class="avatar-md">
-                                                </div>
-                                                <div>
-                                                    <p class="text-dark fw-medium fs-15 mb-0">Electronics Watch</p>
-                                                </div>
-                                            </div>
-
-                                        </td>
-                                        <td>$60 to $400</td>
-                                        <td>Seller</td>
-                                        <td>SM37817</td>
-                                        <td>250</td>
-                                        <td>
-                                            <div class="d-flex gap-2">
-                                                <a href="#!" class="btn btn-light btn-sm">
-                                                    <iconify-icon icon="solar:eye-broken" class="align-middle fs-18">
-                                                    </iconify-icon>
-                                                </a>
-                                                <a href="#!" class="btn btn-soft-primary btn-sm">
-                                                    <iconify-icon icon="solar:pen-2-broken" class="align-middle fs-18">
-                                                    </iconify-icon>
-                                                </a>
-                                                <a href="#!" class="btn btn-soft-danger btn-sm">
-                                                    <iconify-icon icon="solar:trash-bin-minimalistic-2-broken"
-                                                        class="align-middle fs-18"></iconify-icon>
-                                                </a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="form-check">
-                                                <input type="checkbox" class="form-check-input" id="customCheck2">
-                                                <label class="form-check-label" for="customCheck2">&nbsp;</label>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="d-flex align-items-center gap-2">
-                                                <div
-                                                    class="rounded bg-light avatar-md d-flex align-items-center justify-content-center">
-                                                    <img src="/Duan1-main/public/admin/assets_admin/images/product/p-9.png"
-                                                        alt="" class="avatar-md">
-                                                </div>
-                                                <div>
-                                                    <p class="text-dark fw-medium fs-15 mb-0">Eye Ware & Sunglass</p>
-                                                </div>
-                                            </div>
-
-                                        </td>
-                                        <td>$70 to $500</td>
-                                        <td>Admin</td>
-                                        <td>EG37878</td>
-                                        <td>1900</td>
-                                        <td>
-                                            <div class="d-flex gap-2">
-                                                <a href="#!" class="btn btn-light btn-sm">
-                                                    <iconify-icon icon="solar:eye-broken" class="align-middle fs-18">
-                                                    </iconify-icon>
-                                                </a>
-                                                <a href="#!" class="btn btn-soft-primary btn-sm">
-                                                    <iconify-icon icon="solar:pen-2-broken" class="align-middle fs-18">
-                                                    </iconify-icon>
-                                                </a>
-                                                <a href="#!" class="btn btn-soft-danger btn-sm">
-                                                    <iconify-icon icon="solar:trash-bin-minimalistic-2-broken"
-                                                        class="align-middle fs-18"></iconify-icon>
-                                                </a>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                    <?php endforeach; ?>
                                 </tbody>
                             </table>
                         </div>
                         <!-- end table-responsive -->
                     </div>
-
                 </div>
             </div>
         </div>
-
     </div>
-
-
 </div>
