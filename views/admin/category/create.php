@@ -8,7 +8,7 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="bg-light text-center rounded bg-light">
-                            <img src="/Duan1/Duan1-main/public/admin/assets_admin/images/product/p-1.png" alt=""
+                            <img src="/Duan1-main/public/admin/assets_admin/images/product/p-1.png" alt=""
                                 class="avatar-xxl">
                         </div>
                         <div class="mt-3">

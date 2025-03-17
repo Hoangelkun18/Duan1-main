@@ -59,7 +59,7 @@
                                             <div class="d-flex align-items-center gap-2">
                                                 <div
                                                     class="rounded bg-light avatar-md d-flex align-items-center justify-content-center">
-                                                    <img src="/Duan1/Duan1-main/public/admin/assets_admin/images/product/p-1.png"
+                                                    <img src="/Duan1-main/public/admin/assets_admin/images/product/p-1.png"
                                                         alt="" class="avatar-md">
                                                 </div>
                                                 <div>
@@ -109,7 +109,7 @@
                                             <div class="d-flex align-items-center gap-2">
                                                 <div
                                                     class="rounded bg-light avatar-md d-flex align-items-center justify-content-center">
-                                                    <img src="/Duan1/Duan1-main/public/admin/assets_admin/images/product/p-2.png"
+                                                    <img src="/Duan1-main/public/admin/assets_admin/images/product/p-2.png"
                                                         alt="" class="avatar-md">
                                                 </div>
                                                 <div>
@@ -158,7 +158,7 @@
                                             <div class="d-flex align-items-center gap-2">
                                                 <div
                                                     class="rounded bg-light avatar-md d-flex align-items-center justify-content-center">
-                                                    <img src="/Duan1/Duan1-main/public/admin/assets_admin/images/product/p-3.png"
+                                                    <img src="/Duan1-main/public/admin/assets_admin/images/product/p-3.png"
                                                         alt="" class="avatar-md">
                                                 </div>
                                                 <div>
@@ -208,7 +208,7 @@
                                             <div class="d-flex align-items-center gap-2">
                                                 <div
                                                     class="rounded bg-light avatar-md d-flex align-items-center justify-content-center">
-                                                    <img src="/Duan1/Duan1-main/public/admin/assets_admin/images/product/p-4.png"
+                                                    <img src="/Duan1-main/public/admin/assets_admin/images/product/p-4.png"
                                                         alt="" class="avatar-md">
                                                 </div>
                                                 <div>
@@ -259,7 +259,7 @@
                                             <div class="d-flex align-items-center gap-2">
                                                 <div
                                                     class="rounded bg-light avatar-md d-flex align-items-center justify-content-center">
-                                                    <img src="/Duan1/Duan1-main/public/admin/assets_admin/images/product/p-5.png"
+                                                    <img src="/Duan1-main/public/admin/assets_admin/images/product/p-5.png"
                                                         alt="" class="avatar-md">
                                                 </div>
                                                 <div>
@@ -311,7 +311,7 @@
                                             <div class="d-flex align-items-center gap-2">
                                                 <div
                                                     class="rounded bg-light avatar-md d-flex align-items-center justify-content-center">
-                                                    <img src="/Duan1/Duan1-main/public/admin/assets_admin/images/product/p-6.png"
+                                                    <img src="/Duan1-main/public/admin/assets_admin/images/product/p-6.png"
                                                         alt="" class="avatar-md">
                                                 </div>
                                                 <div>
@@ -362,7 +362,7 @@
                                             <div class="d-flex align-items-center gap-2">
                                                 <div
                                                     class="rounded bg-light avatar-md d-flex align-items-center justify-content-center">
-                                                    <img src="/Duan1/Duan1-main/public/admin/assets_admin/images/product/p-7.png"
+                                                    <img src="/Duan1-main/public/admin/assets_admin/images/product/p-7.png"
                                                         alt="" class="avatar-md">
                                                 </div>
                                                 <div>
@@ -413,7 +413,7 @@
                                             <div class="d-flex align-items-center gap-2">
                                                 <div
                                                     class="rounded bg-light avatar-md d-flex align-items-center justify-content-center">
-                                                    <img src="/Duan1/Duan1-main/public/admin/assets_admin/images/product/p-8.png"
+                                                    <img src="/Duan1-main/public/admin/assets_admin/images/product/p-8.png"
                                                         alt="" class="avatar-md">
                                                 </div>
                                                 <div>
@@ -463,7 +463,7 @@
                                             <div class="d-flex align-items-center gap-2">
                                                 <div
                                                     class="rounded bg-light avatar-md d-flex align-items-center justify-content-center">
-                                                    <img src="/Duan1/Duan1-main/public/admin/assets_admin/images/product/p-9.png"
+                                                    <img src="/Duan1-main/public/admin/assets_admin/images/product/p-9.png"
                                                         alt="" class="avatar-md">
                                                 </div>
                                                 <div>
@@ -512,7 +512,7 @@
                                             <div class="d-flex align-items-center gap-2">
                                                 <div
                                                     class="rounded bg-light avatar-md d-flex align-items-center justify-content-center">
-                                                    <img src="/Duan1/Duan1-main/public/admin/assets_admin/images/product/p-10.png"
+                                                    <img src="/Duan1-main/public/admin/assets_admin/images/product/p-10.png"
                                                         alt="" class="avatar-md">
                                                 </div>
                                                 <div>
@@ -562,7 +562,7 @@
                                             <div class="d-flex align-items-center gap-2">
                                                 <div
                                                     class="rounded bg-light avatar-md d-flex align-items-center justify-content-center">
-                                                    <img src="/Duan1/Duan1-main/public/admin/assets_admin/images/product/p-11.png"
+                                                    <img src="/Duan1-main/public/admin/assets_admin/images/product/p-11.png"
                                                         alt="" class="avatar-md">
                                                 </div>
                                                 <div>
@@ -612,7 +612,7 @@
                                             <div class="d-flex align-items-center gap-2">
                                                 <div
                                                     class="rounded bg-light avatar-md d-flex align-items-center justify-content-center">
-                                                    <img src="/Duan1/Duan1-main/public/admin/assets_admin/images/product/p-12.png"
+                                                    <img src="/Duan1-main/public/admin/assets_admin/images/product/p-12.png"
                                                         alt="" class="avatar-md">
                                                 </div>
                                                 <div>

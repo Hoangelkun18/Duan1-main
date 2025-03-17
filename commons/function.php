@@ -15,7 +15,8 @@ function connectDB() {
 
         // cài đặt chế độ trả dữ liệu
         $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-    
+        // echo "thanh";
+        // die();
         return $conn;
     } catch (PDOException $e) {
         echo ("Connection failed: " . $e->getMessage());

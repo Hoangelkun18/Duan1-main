@@ -7,7 +7,7 @@
                     <div class="card-body text-center">
                         <div
                             class="rounded bg-secondary-subtle d-flex align-items-center justify-content-center mx-auto">
-                            <img src="/Duan1/Duan1-main/public/admin/assets_admin/images/product/p-1.png" alt=""
+                            <img src="/Duan1-main/public/admin/assets_admin/images/product/p-1.png" alt=""
                                 class="avatar-xl">
                         </div>
                         <h4 class="mt-3 mb-0">Fashion Categories</h4>
@@ -18,7 +18,7 @@
                 <div class="card">
                     <div class="card-body text-center">
                         <div class="rounded bg-primary-subtle d-flex align-items-center justify-content-center mx-auto">
-                            <img src="/Duan1/Duan1-main/public/admin/assets_admin/images/product/p-6.png" alt=""
+                            <img src="/Duan1-main/public/admin/assets_admin/images/product/p-6.png" alt=""
                                 class="avatar-xl">
                         </div>
                         <h4 class="mt-3 mb-0">Electronics Headphone</h4>
@@ -30,7 +30,7 @@
                 <div class="card">
                     <div class="card-body text-center">
                         <div class="rounded bg-warning-subtle d-flex align-items-center justify-content-center mx-auto">
-                            <img src="/Duan1/Duan1-main/public/admin/assets_admin/images/product/p-7.png" alt=""
+                            <img src="/Duan1-main/public/admin/assets_admin/images/product/p-7.png" alt=""
                                 class="avatar-xl">
                         </div>
                         <h4 class="mt-3 mb-0">Foot Wares</h4>
@@ -42,7 +42,7 @@
                 <div class="card">
                     <div class="card-body text-center">
                         <div class="rounded bg-info-subtle d-flex align-items-center justify-content-center mx-auto">
-                            <img src="/Duan1/Duan1-main/public/admin/assets_admin/images/product/p-9.png" alt=""
+                            <img src="/Duan1-main/public/admin/assets_admin/images/product/p-9.png" alt=""
                                 class="avatar-xl">
                         </div>
                         <h4 class="mt-3 mb-0">Eye Ware & Sunglass</h4>
@@ -107,7 +107,7 @@
                                             <div class="d-flex align-items-center gap-2">
                                                 <div
                                                     class="rounded bg-light avatar-md d-flex align-items-center justify-content-center">
-                                                    <img src="/Duan1/Duan1-main/public/admin/assets_admin/images/product/p-1.png"
+                                                    <img src="/Duan1-main/public/admin/assets_admin/images/product/p-1.png"
                                                         alt="" class="avatar-md">
                                                 </div>
                                                 <p class="text-dark fw-medium fs-15 mb-0">Fashion Men , Women & Kid's
@@ -148,7 +148,7 @@
                                             <div class="d-flex align-items-center gap-2">
                                                 <div
                                                     class="rounded bg-light avatar-md d-flex align-items-center justify-content-center">
-                                                    <img src="/Duan1/Duan1-main/public/admin/assets_admin/images/product/p-2.png"
+                                                    <img src="/Duan1-main/public/admin/assets_admin/images/product/p-2.png"
                                                         alt="" class="avatar-md">
                                                 </div>
                                                 <div>
@@ -191,7 +191,7 @@
                                             <div class="d-flex align-items-center gap-2">
                                                 <div
                                                     class="rounded bg-light avatar-md d-flex align-items-center justify-content-center">
-                                                    <img src="/Duan1/Duan1-main/public/admin/assets_admin/images/product/p-4.png"
+                                                    <img src="/Duan1-main/public/admin/assets_admin/images/product/p-4.png"
                                                         alt="" class="avatar-md">
                                                 </div>
                                                 <div>
@@ -233,7 +233,7 @@
                                             <div class="d-flex align-items-center gap-2">
                                                 <div
                                                     class="rounded bg-light avatar-md d-flex align-items-center justify-content-center">
-                                                    <img src="/Duan1/Duan1-main/public/admin/assets_admin/images/product/p-6.png"
+                                                    <img src="/Duan1-main/public/admin/assets_admin/images/product/p-6.png"
                                                         alt="" class="avatar-md">
                                                 </div>
                                                 <div>
@@ -276,7 +276,7 @@
                                             <div class="d-flex align-items-center gap-2">
                                                 <div
                                                     class="rounded bg-light avatar-md d-flex align-items-center justify-content-center">
-                                                    <img src="/Duan1/Duan1-main/public/admin/assets_admin/images/product/p-7.png"
+                                                    <img src="/Duan1-main/public/admin/assets_admin/images/product/p-7.png"
                                                         alt="" class="avatar-md">
                                                 </div>
                                                 <div>
@@ -318,7 +318,7 @@
                                             <div class="d-flex align-items-center gap-2">
                                                 <div
                                                     class="rounded bg-light avatar-md d-flex align-items-center justify-content-center">
-                                                    <img src="/Duan1/Duan1-main/public/admin/assets_admin/images/product/p-8.png"
+                                                    <img src="/Duan1-main/public/admin/assets_admin/images/product/p-8.png"
                                                         alt="" class="avatar-md">
                                                 </div>
                                                 <div>
@@ -359,7 +359,7 @@
                                             <div class="d-flex align-items-center gap-2">
                                                 <div
                                                     class="rounded bg-light avatar-md d-flex align-items-center justify-content-center">
-                                                    <img src="/Duan1/Duan1-main/public/admin/assets_admin/images/product/p-11.png"
+                                                    <img src="/Duan1-main/public/admin/assets_admin/images/product/p-11.png"
                                                         alt="" class="avatar-md">
                                                 </div>
                                                 <div>
@@ -400,7 +400,7 @@
                                             <div class="d-flex align-items-center gap-2">
                                                 <div
                                                     class="rounded bg-light avatar-md d-flex align-items-center justify-content-center">
-                                                    <img src="/Duan1/Duan1-main/public/admin/assets_admin/images/product/p-9.png"
+                                                    <img src="/Duan1-main/public/admin/assets_admin/images/product/p-9.png"
                                                         alt="" class="avatar-md">
                                                 </div>
                                                 <div>

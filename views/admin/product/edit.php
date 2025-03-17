@@ -7,7 +7,7 @@
             <div class="col-xl-3 col-lg-4">
                 <div class="card">
                     <div class="card-body">
-                        <img src="/Duan1/Duan1-main/public/admin/assets_admin/images/product/p-1.png" alt=""
+                        <img src="/Duan1-main/public/admin/assets_admin/images/product/p-1.png" alt=""
                             class="img-fluid rounded bg-light">
                         <div class="mt-3">
                             <h4>Men Black Slim Fit T-shirt <span class="fs-14 text-muted ms-1">(Fashion)</span></h4>
