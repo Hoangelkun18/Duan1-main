@@ -1,3 +1,18 @@
+<?php if(isset($_SESSION['success_message'])): ?>
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    <?php echo $_SESSION['success_message']; ?>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+<?php unset($_SESSION['success_message']); ?>
+<?php endif; ?>
+
+<?php if(isset($_SESSION['error_message'])): ?>
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <?php echo $_SESSION['error_message']; ?>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+<?php unset($_SESSION['error_message']); ?>
+<?php endif; ?>
 <div class="page-content">
 
     <!-- Start Container Fluid -->
@@ -114,7 +129,8 @@
                                                     <iconify-icon icon="solar:pen-2-broken" class="align-middle fs-18">
                                                     </iconify-icon>
                                                 </a>
-                                                <a href="#" class="btn btn-soft-danger btn-sm"
+                                                <a href="?act=product_delete&id=<?php echo $product['id']; ?>"
+                                                    class="btn btn-soft-danger btn-sm"
                                                     onclick="confirmDelete(<?php echo $product['id']; ?>)">
                                                     <iconify-icon icon="solar:trash-bin-minimalistic-2-broken"
                                                         class="align-middle fs-18"></iconify-icon>

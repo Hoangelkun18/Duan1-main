@@ -42,4 +42,12 @@ class Category
         $stmt = $this->conn->prepare("DELETE FROM danh_muc WHERE id = ?");
         return $stmt->execute([$id]);
     }
+    public function getTotalCategory($id){
+        $query = "SELECT COUNT(*) as total FROM san_pham WHERE id_dm = ?";
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute([$id]);
+        $rel= $stmt->fetch(PDO::FETCH_ASSOC);
+        return $rel;
+
+    }
 }

@@ -97,5 +97,39 @@ class Product
             'count' => 55
         ];
     }
+    public function delete($id) {
+        try {
+            $conn = connectDB();
+            // Bắt đầu transaction
+            $conn->beginTransaction();
+            
+            // Xóa các chi tiết sản phẩm trước
+            $sql_ct = "DELETE FROM chi_tiet_sp WHERE id_sp = :id";
+            $stmt_ct = $conn->prepare($sql_ct);
+            $stmt_ct->bindParam(':id', $id);
+            $stmt_ct->execute();
+            
+            // Xóa các ảnh sản phẩm (nếu có bảng riêng, không phải là id_anh trong san_pham)
+            $sql_anh = "DELETE FROM anh_sp WHERE id = :id";
+            $stmt_anh = $conn->prepare($sql_anh);
+            $stmt_anh->bindParam(':id', $id);
+            $stmt_anh->execute();
+            
+            // Xóa sản phẩm
+            $sql = "DELETE FROM san_pham WHERE id = :id";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(':id', $id);
+            $stmt->execute();
+            
+            // Commit transaction
+            $conn->commit();
+            return true;
+        } catch (PDOException $e) {
+            // Nếu có lỗi thì rollback
+            $conn->rollBack();
+            error_log("Error deleting product: " . $e->getMessage());
+            return false;
+        }
+    }
     
 }

@@ -27,6 +27,7 @@ match ($act) {
     'product_edit'  => (new HomeAdmin())->productEdit(),
 
     'product_create'  => (new HomeAdmin())->productCreate(),
+    'product_delete'  => (new HomeAdmin())->productDelete(),
 
     'category'  => (new HomeAdmin())->category(),
 
