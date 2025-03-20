@@ -1,17 +1,20 @@
-<?php 
+<?php
+class HomeAdmin {
+    private $db;
 
-class HomeAdmin
-{
+    public function __construct($db) {
+        $this->db = $db;
+    }
+
     public function index() {
         $view = 'dashboard';
         $title = 'dashboard';
         require_once './views/admin/main.php';
     }
-    
+
     public function product() {
-        // Gọi model để lấy dữ liệu
         require_once './models/Product.php';
-        $productModel = new Product();
+        $productModel = new Product($this->db);
         $products = $productModel->getAll();
         
         $view = 'product/list';
@@ -24,77 +27,114 @@ class HomeAdmin
         $title = 'product edit';
         require_once './views/admin/main.php';
     }
-    
+
     public function productCreate() {
         $view = 'product/create';
         $title = 'product create';
         require_once './views/admin/main.php';
     }
+
     public function productDelete() {
-        if(isset($_GET['id'])) {
+        if (isset($_GET['id'])) {
             $id = $_GET['id'];
             require_once './models/Product.php';
-            $productModel = new Product();
+            $productModel = new Product($this->db);
             $result = $productModel->delete($id);
-            // echo ($result);
             
-            // die();
-            if($result) {
-                // Thành công, có thể set sessio?n message
+            if ($result) {
                 $_SESSION['success_message'] = "Xóa sản phẩm thành công!";
             } else {
-                // Thất bại, có thể set session error
                 $_SESSION['error_message'] = "Không thể xóa sản phẩm. Vui lòng thử lại!";
             }
         }
         header('Location: ?act=product');
         exit();
     }
-    
+
     public function category() {
-        // Gọi model để lấy dữ liệu
         require_once './models/Category.php';
-        $categoryModel = new Category();
+        $categoryModel = new Category($this->db);
         $categories = $categoryModel->getAll();
         
         $title = 'category';
         $view = 'category/list';
         require_once './views/admin/main.php';
     }
-    
-    public function categoryEdit() {
-        $title = 'category edit';
-        $view = 'category/edit';
-        require_once './views/admin/main.php';
-    }
-    
+
     public function categoryCreate() {
+        require_once './models/Category.php';
+        $categoryModel = new Category($this->db);
+
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $ten_dm = $_POST['ten_dm'];
+            $mo_ta = $_POST['mo_ta'];
+            
+            if ($categoryModel->create($ten_dm, $mo_ta)) {
+                $_SESSION['success_message'] = "Thêm danh mục thành công!";
+                header('Location: ?act=category');
+                exit();
+            } else {
+                $_SESSION['error_message'] = "Không thể thêm danh mục. Vui lòng thử lại!";
+            }
+        }
+
         $title = 'category create';
         $view = 'category/create';
         require_once './views/admin/main.php';
     }
-   
-    public function categoryDelete() {
-        if(isset($_GET['id'])) {
+
+    public function categoryEdit() {
+        require_once './models/Category.php';
+        $categoryModel = new Category($this->db);
+
+        if (isset($_GET['id'])) {
             $id = $_GET['id'];
-            require_once './models/Category.php';
-            $categoryModel = new Category();
-            $total=  $categoryModel->getTotalCategory($id);
+            $category = $categoryModel->getById($id);
+
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                $ten_dm = $_POST['ten_dm'];
+                $mo_ta = $_POST['mo_ta'];
+
+                if ($categoryModel->update($id, $ten_dm, $mo_ta)) {
+                    $_SESSION['success_message'] = "Cập nhật danh mục thành công!";
+                    header('Location: ?act=category');
+                    exit();
+                } else {
+                    $_SESSION['error_message'] = "Không thể cập nhật danh mục. Vui lòng thử lại!";
+                }
+            }
+        } else {
+            $_SESSION['error_message'] = "Không tìm thấy danh mục!";
+            header('Location: ?act=category');
+            exit();
+        }
+
+        $title = 'category edit';
+        $view = 'category/edit';
+        require_once './views/admin/main.php';
+    }
+
+    public function categoryDelete() {
+        require_once './models/Category.php';
+        $categoryModel = new Category($this->db);
+    
+        if (isset($_GET['id'])) {
+            $id = $_GET['id'];
+            $total = $categoryModel->getTotalCategory($id);
+    
             if ($total['total'] > 0) {
-                // echo "Không thể xóa danh mục này vì vẫn còn sản phẩm!";
-                header('Location:?act=category');
-                exit();
-                echo "<script>alert('Không thể xóa danh mục này vì vẫn còn sản phẩm!');</script>";
+                $_SESSION['error_message'] = "Không thể xóa danh mục này vì vẫn còn sản phẩm!";
             } else {
-                $categoryModel->delete($id);
-                echo "<script>alert('tc!');</script>";
+                if ($categoryModel->delete($id)) {
+                    $_SESSION['success_message'] = "Xóa danh mục thành công!";
+                } else {
+                    $_SESSION['error_message'] = "Không thể xóa danh mục. Vui lòng thử lại!";
+                }
             }
         }
-        
-        
-        
+    
+        header('Location: ?act=category');
+        exit();
     }
-        
-   
-
 }
+?>

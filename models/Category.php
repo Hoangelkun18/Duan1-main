@@ -1,53 +1,62 @@
-// File: models/Category.php
 <?php
-
-class Category
-{
+class Category {
     private $conn;
 
-    public function __construct()
-    {
-        $this->conn = connectDB();
+    public function __construct($db) {
+        $this->conn = $db;
     }
 
-    public function getAll()
-    {
-        $stmt = $this->conn->prepare("SELECT * FROM danh_muc ORDER BY id DESC");
-        $stmt->execute();
-        return $stmt->fetchAll();
-    }
-
-    public function getById($id)
-    {
-        $stmt = $this->conn->prepare("SELECT * FROM danh_muc WHERE id = ?");
-        $stmt->execute([$id]);
-        return $stmt->fetch();
-    }
-
-    public function insert($data)
-    {
-        $stmt = $this->conn->prepare("INSERT INTO danh_muc (ten_dm, mo_ta) VALUES (?, ?)");
-        $stmt->execute([$data['ten_dm'], $data['mo_ta']]);
-        return $this->conn->lastInsertId();
-    }
-
-    public function update($data)
-    {
-        $stmt = $this->conn->prepare("UPDATE danh_muc SET ten_dm = ?, mo_ta = ? WHERE id = ?");
-        return $stmt->execute([$data['ten_dm'], $data['mo_ta'], $data['id']]);
-    }
-
-    public function delete($id)
-    {
-        $stmt = $this->conn->prepare("DELETE FROM danh_muc WHERE id = ?");
-        return $stmt->execute([$id]);
-    }
-    public function getTotalCategory($id){
-        $query = "SELECT COUNT(*) as total FROM san_pham WHERE id_dm = ?";
+    // Lấy tất cả danh mục
+    public function getAll() {
+        $query = "SELECT * FROM danh_muc";
         $stmt = $this->conn->prepare($query);
-        $stmt->execute([$id]);
-        $rel= $stmt->fetch(PDO::FETCH_ASSOC);
-        return $rel;
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 
+    // Lấy một danh mục theo ID
+    public function getById($id) {
+        $query = "SELECT * FROM danh_muc WHERE id = :id";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
+    // Tạo danh mục mới
+    public function create($ten_dm, $mo_ta) {
+        $query = "INSERT INTO danh_muc (ten_dm, mo_ta) VALUES (:ten_dm, :mo_ta)";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(':ten_dm', $ten_dm);
+        $stmt->bindParam(':mo_ta', $mo_ta);
+        return $stmt->execute();
+    }
+
+    // Cập nhật danh mục
+    public function update($id, $ten_dm, $mo_ta) {
+        $query = "UPDATE danh_muc SET ten_dm = :ten_dm, mo_ta = :mo_ta WHERE id = :id";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(':id', $id);
+        $stmt->bindParam(':ten_dm', $ten_dm);
+        $stmt->bindParam(':mo_ta', $mo_ta);
+        return $stmt->execute();
+    }
+
+    // Xóa danh mục
+    public function delete($id) {
+        $query = "DELETE FROM danh_muc WHERE id = :id";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(':id', $id);
+        return $stmt->execute();
+    }
+
+    // Kiểm tra số lượng sản phẩm trong danh mục
+    public function getTotalCategory($id) {
+        $query = "SELECT COUNT(*) as total FROM san_pham WHERE id_dm = :id"; // Sửa id_danh_muc thành id_dm
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 }
+?>
