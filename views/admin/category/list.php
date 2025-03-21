@@ -1,22 +1,6 @@
 <div class="page-content">
     <div class="container-xxl">
 
-        <div class="row">
-            <?php foreach ($categories as $category): ?>
-            <div class="col-md-6 col-xl-3">
-                <div class="card">
-                    <div class="card-body text-center">
-                        <div
-                            class="rounded bg-secondary-subtle d-flex align-items-center justify-content-center mx-auto">
-                            <img src="/Duan1-main/public/admin/assets_admin/images/product/p-1.png" alt=""
-                                class="avatar-xl">
-                        </div>
-                        <h4 class="mt-3 mb-0"><?= $category['ten_dm'] ?></h4>
-                    </div>
-                </div>
-            </div>
-            <?php endforeach; ?>
-        </div>
 
         <div class="row">
             <div class="col-xl-12">
@@ -73,11 +57,6 @@
                                         </td>
                                         <td>
                                             <div class="d-flex align-items-center gap-2">
-                                                <div
-                                                    class="rounded bg-light avatar-md d-flex align-items-center justify-content-center">
-                                                    <img src="/Duan1-main/public/admin/assets_admin/images/product/p-1.png"
-                                                        alt="" class="avatar-md">
-                                                </div>
                                                 <p class="text-dark fw-medium fs-15 mb-0"><?= $category['ten_dm'] ?></p>
                                             </div>
                                         </td>
