@@ -325,5 +325,124 @@ class HomeAdmin {
         header('Location: ?act=category');
         exit();
     }
+
+
+
+
+    
+    //ma giam gia
+    public function discount() {
+        require_once './models/Discount.php';
+        $discountModel = new Discount($this->db);
+        $discounts = $discountModel->getAll();
+        $view = 'discount/list';
+        $title = 'Danh sách khuyến mại';
+        require_once './views/admin/main.php';
+    }
+    // public function discountEdit($id) {
+    //     if ($id === null) {
+    //         echo "ID không hợp lệ!";
+    //         return;
+    //     }
+    //     require_once './models/Discount.php';
+    //     $discountModel = new Discount($this->db);
+    //     $discount = $discountModel->getById($id);
+            
+    //     $view = 'discount/edit';
+    //     $title = 'Chỉnh sửa khuyến mãi';
+    //     require_once './views/admin/main.php';
+    // }
+
+    public function edit_discount() {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $id = $_GET['id']; 
+            $ten_km = $_POST['ten_km'];
+            $ma_km = $_POST['ma_km'];
+            $ngay_bat_dau = $_POST['ngay_bat_dau'];
+            $ngay_ket_thuc = $_POST['ngay_ket_thuc'];
+            $loai_km = $_POST['loai_km'];
+            $trang_thai = $_POST['trang_thai'];
+            
+            require_once './models/Discount.php';
+            $discountModel = new Discount($this->db);
+    
+            $result = $discountModel->update($id, $ten_km, $ma_km, $ngay_bat_dau, $ngay_ket_thuc, $loai_km, $trang_thai);
+            
+            if ($result) {
+                $_SESSION['success_message'] = "Cập nhật khuyến mãi thành công!";
+            } else {
+                $_SESSION['error_message'] = "Có lỗi xảy ra khi cập nhật khuyến mãi!";
+            }
+    
+            header('Location: ?act=discount');
+            exit();}
+         else {
+            // Lấy thông tin khuyến mãi để hiển thị trong form
+            $id = $_GET['id'];
+            require_once './models/Discount.php';
+            $discountModel = new Discount($this->db);
+            $discount = $discountModel->getById($id); // Lấy thông tin khuyến mãi theo ID
+            
+            $view = 'discount/edit';
+            $title = 'Chỉnh sửa khuyến mãi';
+            require_once './views/admin/main.php';
+        }
+    }
+    
+
+    // Tạo khuyến mại mới
+    public function discountCreate() {
+        $view = 'discount/create';
+        $title = 'discount create';
+        require_once './views/admin/main.php';
+    }
+
+    // Xóa khuyến mại
+    public function discountDelete() {
+        if (isset($_GET['id'])) {
+            $id = $_GET['id'];
+            require_once './models/Discount.php';
+            $discountModel = new Discount($this->db);
+            $result = $discountModel->delete($id);
+            
+            if ($result) {
+                $_SESSION['success_message'] = "Xóa khuyến mại thành công!";
+            } else {
+                $_SESSION['error_message'] = "Không thể xóa khuyến mại. Vui lòng thử lại!";
+            }
+        }
+        header('Location: ?act=discount');
+        exit();
+    }
+
+    public function create_discount() {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $ten_km = $_POST['ten_km'];
+            $ma_km = $_POST['ma_km'];
+            $ngay_bat_dau = $_POST['ngay_bat_dau'];
+$ngay_ket_thuc = $_POST['ngay_ket_thuc'];
+            $loai_km = $_POST['loai_km'];
+            $trang_thai = $_POST['trang_thai'];
+
+            if (empty($ten_km) || empty($ma_km) || empty($ngay_bat_dau) || empty($ngay_ket_thuc)) {
+                $_SESSION['error_message'] = 'Vui lòng điền đầy đủ thông tin khuyến mại.';
+                header('Location: ?act=discount&view=create');
+                exit();
+            }
+
+            require_once './models/Discount.php';
+            $discountModel = new Discount($this->db);
+            $result = $discountModel->create($ten_km, $ma_km, $ngay_bat_dau, $ngay_ket_thuc, $loai_km, $trang_thai);
+            
+            if ($result) {
+                $_SESSION['success_message'] = "Khuyến mại mới đã được tạo thành công!";
+                header('Location: ?act=discount');  // Quay lại trang danh sách khuyến mãi
+            } else {
+                $_SESSION['error_message'] = "Có lỗi khi tạo khuyến mại. Vui lòng thử lại!";
+                header('Location: ?act=discount&view=create');
+            }
+        }
+
+    }
 }
 ?>
