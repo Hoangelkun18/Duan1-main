@@ -14,8 +14,6 @@
 <?php unset($_SESSION['error_message']); ?>
 <?php endif; ?>
 <div class="page-content">
-
-    <!-- Start Container Fluid -->
     <div class="container-fluid">
 
         <div class="row">
@@ -91,7 +89,7 @@
                                         <td>
                                             <p class="mb-1 text-muted"><span
                                                     class="text-dark fw-medium"><?php echo $product['so_luong']; ?>
-                                                    Sản Phẩm</span> Còn Lại</p>
+                                                    Sản Phẩm</span>
                                             <p class="mb-0 text-muted"><?php echo $product['so_luong_ban'] ?? 0; ?> Đã
                                                 Bán
                                             </p>
@@ -135,24 +133,11 @@
                                 </tbody>
                             </table>
                         </div>
-                        <!-- end table-responsive -->
-                    </div>
-                    <div class="card-footer border-top">
-                        <nav aria-label="Page navigation example">
-                            <ul class="pagination justify-content-end mb-0">
-                                <li class="page-item"><a class="page-link" href="javascript:void(0);">Trước</a></li>
-                                <li class="page-item active"><a class="page-link" href="javascript:void(0);">1</a></li>
-                                <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
-                                <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
-                                <li class="page-item"><a class="page-link" href="javascript:void(0);">Tiếp Theo</a></li>
-                            </ul>
-                        </nav>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- End Container Fluid -->
 </div>
 
 <script>
