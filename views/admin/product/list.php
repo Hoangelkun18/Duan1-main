@@ -41,7 +41,6 @@
                                         <th>Giá</th>
                                         <th>Kho Hàng</th>
                                         <th>Danh Mục</th>
-                                        <th>Đánh Giá</th>
                                         <th>Hành Động</th>
                                     </tr>
                                 </thead>
@@ -56,8 +55,6 @@
                                             }
                                             $sizeText = rtrim($sizeText, ' , ');
                                             
-                                            // Lấy thông tin đánh giá
-                                            $ratingInfo = $productModel->getRatingInfo($product['id']);
                                         ?>
                                     <tr>
                                         <td>
@@ -95,22 +92,11 @@
                                             </p>
                                         </td>
                                         <td><?php echo $product['ten_dm']; ?></td>
-                                        <td>
-                                            <span class="badge p-1 bg-light text-dark fs-12 me-1">
-                                                <i class="bx bxs-star align-text-top fs-14 text-warning me-1"></i>
-                                                <?php echo $ratingInfo['rating']; ?>
-                                            </span>
-                                            <?php echo $ratingInfo['count']; ?> Đánh Giá
-                                        </td>
+
                                         <td>
                                             <div class="d-flex gap-2">
                                                 <a href="?act=product_edit&id=<?php echo $product['id']; ?>"
-                                                    class="btn btn-light btn-sm">
-                                                    <iconify-icon icon="solar:eye-broken" class="align-middle fs-18">
-                                                    </iconify-icon>
-                                                </a>
-                                                <a href="?act=product_edit&id=<?php echo $product['id']; ?>"
-                                                    class="btn btn-soft-primary btn-sm">
+                                                    class="btn btn-soft-info btn-sm">
                                                     <iconify-icon icon="solar:pen-2-broken" class="align-middle fs-18">
                                                     </iconify-icon>
                                                 </a>

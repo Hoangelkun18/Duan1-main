@@ -140,17 +140,19 @@ class HomeAdmin {
         $sizes = $productModel->getAllSizes();
         
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            // Handle file upload
+            // Debug dữ liệu gửi từ form
+            var_dump($_POST);
+            var_dump($_FILES);
+            // exit(); // Tạm dừng để xem dữ liệu
+            
             $uploadDir = './public/admin/assets_admin/images/product/';
             $mainImage = '';
             $additionalImages = [];
             
-            // Make sure the upload directory exists
             if (!file_exists($uploadDir)) {
                 mkdir($uploadDir, 0777, true);
             }
             
-            // Process main image
             if (isset($_FILES['main_image']) && $_FILES['main_image']['error'] === UPLOAD_ERR_OK) {
                 $fileTemp = $_FILES['main_image']['tmp_name'];
                 $fileName = time() . '_' . $_FILES['main_image']['name'];
@@ -158,13 +160,19 @@ class HomeAdmin {
                 
                 if (move_uploaded_file($fileTemp, $filePath)) {
                     $mainImage = $fileName;
+                } else {
+                    $_SESSION['error_message'] = "Không thể upload ảnh chính!";
+                    header('Location: ?act=product_create');
+                    exit();
                 }
+            } else {
+                $_SESSION['error_message'] = "Ảnh chính là bắt buộc!";
+                header('Location: ?act=product_create');
+                exit();
             }
             
-            // Process additional images
             if (isset($_FILES['additional_images'])) {
                 $fileCount = count($_FILES['additional_images']['name']);
-                
                 for ($i = 0; $i < $fileCount; $i++) {
                     if ($_FILES['additional_images']['error'][$i] === UPLOAD_ERR_OK) {
                         $fileTemp = $_FILES['additional_images']['tmp_name'][$i];
@@ -178,17 +186,15 @@ class HomeAdmin {
                 }
             }
             
-            // Process form data
             $productData = [
                 'ten_sp' => $_POST['ten_sp'],
                 'id_dm' => $_POST['id_dm'],
                 'so_luong' => $_POST['so_luong'],
                 'mo_ta' => $_POST['mo_ta'],
-                'trang_thai' => isset($_POST['trang_thai']) ? 1 : 0,
+                'trang_thai' => $_POST['trang_thai'] ?? 0,
                 'additional_images' => $additionalImages
             ];
             
-            // Process variations
             $variations = [];
             if (isset($_POST['variations']) && is_array($_POST['variations'])) {
                 foreach ($_POST['variations'] as $variation) {
@@ -201,18 +207,14 @@ class HomeAdmin {
                     ];
                 }
             }
-            
             $productData['variations'] = $variations;
             
-            // Create the product
             if ($productModel->create($productData, $mainImage)) {
                 $_SESSION['success_message'] = "Thêm sản phẩm thành công!";
-                session_write_close(); // Đảm bảo session được lưu trước khi chuyển hướng
                 header('Location: ?act=product');
                 exit();
             } else {
                 $_SESSION['error_message'] = "Không thể thêm sản phẩm. Vui lòng thử lại!";
-                session_write_close(); // Đảm bảo session được lưu trước khi chuyển hướng
                 header('Location: ?act=product_create');
                 exit();
             }
@@ -339,23 +341,17 @@ class HomeAdmin {
         $title = 'Danh sách khuyến mại';
         require_once './views/admin/main.php';
     }
-    // public function discountEdit($id) {
-    //     if ($id === null) {
-    //         echo "ID không hợp lệ!";
-    //         return;
-    //     }
-    //     require_once './models/Discount.php';
-    //     $discountModel = new Discount($this->db);
-    //     $discount = $discountModel->getById($id);
-            
-    //     $view = 'discount/edit';
-    //     $title = 'Chỉnh sửa khuyến mãi';
-    //     require_once './views/admin/main.php';
-    // }
 
     public function edit_discount() {
+        // Kiểm tra xem id có tồn tại trong URL không
+        if (!isset($_GET['id']) || empty($_GET['id'])) {
+            $_SESSION['error_message'] = "Không tìm thấy mã giảm giá để chỉnh sửa!";
+            header('Location: ?act=discount');
+            exit();
+        }
+    
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $id = $_GET['id']; 
+            $id = $_GET['id'];
             $ten_km = $_POST['ten_km'];
             $ma_km = $_POST['ma_km'];
             $ngay_bat_dau = $_POST['ngay_bat_dau'];
@@ -375,21 +371,26 @@ class HomeAdmin {
             }
     
             header('Location: ?act=discount');
-            exit();}
-         else {
+            exit();
+        } else {
             // Lấy thông tin khuyến mãi để hiển thị trong form
             $id = $_GET['id'];
             require_once './models/Discount.php';
             $discountModel = new Discount($this->db);
             $discount = $discountModel->getById($id); // Lấy thông tin khuyến mãi theo ID
             
+            // Kiểm tra xem mã giảm giá có tồn tại không
+            if (!$discount) {
+                $_SESSION['error_message'] = "Mã giảm giá không tồn tại!";
+                header('Location: ?act=discount');
+                exit();
+            }
+    
             $view = 'discount/edit';
             $title = 'Chỉnh sửa khuyến mãi';
             require_once './views/admin/main.php';
         }
     }
-    
-
     // Tạo khuyến mại mới
     public function discountCreate() {
         $view = 'discount/create';

@@ -100,6 +100,7 @@ class Product
         // Trả về danh sách màu sắc dưới dạng mảng
         return $stmt->fetchAll();
     }
+    
 
     // Lấy danh sách tất cả kích thước
     public function getAllSizes() {
@@ -112,15 +113,6 @@ class Product
         $stmt->execute();
         // Trả về danh sách kích thước dưới dạng mảng
         return $stmt->fetchAll();
-    }
-
-    // Lấy thông tin đánh giá của sản phẩm (dữ liệu mẫu)
-    public function getRatingInfo($productId) {
-        // Trả về dữ liệu mẫu, sau này có thể thay bằng truy vấn thực tế
-        return [
-            'rating' => 4.5, // Điểm đánh giá trung bình
-            'count' => 55    // Số lượng đánh giá
-        ];
     }
 
     // Xóa một sản phẩm theo ID
@@ -164,16 +156,12 @@ class Product
     // Tạo một sản phẩm mới
     public function create($data, $image) {
         try {
-            // Kết nối đến cơ sở dữ liệu
             $conn = connectDB();
-            // Bắt đầu giao dịch
             $conn->beginTransaction();
             
-            // Thêm sản phẩm vào bảng san_pham
             $sql = "INSERT INTO san_pham (ten_sp, id_dm, so_luong, mo_ta, hinh_anh, trang_thai) 
                     VALUES (:ten_sp, :id_dm, :so_luong, :mo_ta, :hinh_anh, :trang_thai)";
             
-            // Chuẩn bị và gán giá trị cho các tham số
             $stmt = $conn->prepare($sql);
             $stmt->bindParam(':ten_sp', $data['ten_sp']);
             $stmt->bindParam(':id_dm', $data['id_dm']);
@@ -183,10 +171,8 @@ class Product
             $stmt->bindParam(':trang_thai', $data['trang_thai']);
             $stmt->execute();
             
-            // Lấy ID của sản phẩm vừa thêm
             $productId = $conn->lastInsertId();
             
-            // Thêm các ảnh phụ nếu có
             if (!empty($data['additional_images'])) {
                 foreach ($data['additional_images'] as $img) {
                     $sql_img = "INSERT INTO anh_sp (id_sp, hinh_anh) VALUES (:id_sp, :hinh_anh)";
@@ -197,9 +183,13 @@ class Product
                 }
             }
             
-            // Thêm các biến thể nếu có
             if (!empty($data['variations'])) {
                 foreach ($data['variations'] as $variation) {
+                    // Kiểm tra dữ liệu biến thể trước khi insert
+                    if (empty($variation['id_mau']) || empty($variation['id_kich_co']) || empty($variation['so_luong']) || empty($variation['don_gia'])) {
+                        throw new PDOException("Dữ liệu biến thể không hợp lệ: thiếu trường bắt buộc!");
+                    }
+                    
                     $sql_var = "INSERT INTO chi_tiet_sp (id_sp, id_mau, id_kich_co, so_luong, don_gia, gia_km) 
                                 VALUES (:id_sp, :id_mau, :id_kich_co, :so_luong, :don_gia, :gia_km)";
                     $stmt_var = $conn->prepare($sql_var);
@@ -211,17 +201,16 @@ class Product
                     $stmt_var->bindParam(':gia_km', $variation['gia_km']);
                     $stmt_var->execute();
                 }
+            } else {
+                throw new PDOException("Không có biến thể nào được cung cấp!");
             }
             
-            // Xác nhận giao dịch thành công
             $conn->commit();
-            return $productId; // Trả về ID của sản phẩm vừa tạo
+            return $productId;
         } catch (PDOException $e) {
-            // Nếu có lỗi, hủy giao dịch
             $conn->rollBack();
-            // Ghi log lỗi để kiểm tra
             error_log("Error creating product: " . $e->getMessage());
-            return false; // Trả về false nếu tạo thất bại
+            return false;
         }
     }
 

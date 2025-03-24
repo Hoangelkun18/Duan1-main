@@ -15,24 +15,9 @@
                     <div class="card-header d-flex justify-content-between align-items-center gap-1">
                         <h4 class="card-title flex-grow-1">Danh sách khuyến mãi</h4>
 
-                        <a href="?act=discount_create" class="btn btn-sm btn-primary">
+                        <a href="?act=discount_create" class="btn btn-sm btn-danger">
                             Thêm khuyến mãi
                         </a>
-
-                        <div class="dropdown">
-                            <a href="#" class="dropdown-toggle btn btn-sm btn-outline-light" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Tháng này
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-end">
-                                <!-- item-->
-                                <a href="#!" class="dropdown-item">Tải xuống</a>
-                                <!-- item-->
-                                <a href="#!" class="dropdown-item">Xuất</a>
-                                <!-- item-->
-                                <a href="#!" class="dropdown-item">Nhập</a>
-                            </div>
-                        </div>
                     </div>
 
                     <div>
@@ -63,7 +48,7 @@
                                         <td>
                                             <div class="d-flex gap-2">
                                                 <a href="?act=edit_discount&id=<?= $discount['id'] ?>"
-                                                    class="btn btn-soft-primary btn-sm">
+                                                    class="btn btn-soft-info btn-sm">
                                                     <iconify-icon icon="solar:pen-2-broken" class="align-middle fs-18">
                                                     </iconify-icon>
                                                 </a>
@@ -87,23 +72,10 @@
                             </table>
                         </div>
                     </div>
-
-                    <div class="card-footer border-top">
-                        <nav aria-label="Page navigation example">
-                            <ul class="pagination justify-content-end mb-0">
-                                <li class="page-item"><a class="page-link" href="javascript:void(0);">Trước</a></li>
-                                <li class="page-item active"><a class="page-link" href="javascript:void(0);">1</a></li>
-                                <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
-                                <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
-                                <li class="page-item"><a class="page-link" href="javascript:void(0);">Tiếp theo</a></li>
-                            </ul>
-                        </nav>
-                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- End Container Fluid -->
 </div>
 
 <script>
