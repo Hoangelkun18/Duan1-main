@@ -95,7 +95,7 @@
                                             required>
                                     </div>
                                 </div>
-                                <div class="col-lg-4">
+                                <!-- <div class="col-lg-4">
                                     <div class="mb-3">
                                         <label for="trang_thai" class="form-label fw-bold">Trạng Thái</label>
                                         <div class="form-check form-switch mt-2">
@@ -104,7 +104,7 @@
                                             <label class="form-check-label" for="trang_thai">Hiển Thị</label>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
