@@ -22,26 +22,11 @@
             <div class="col-xl-12">
                 <div class="card">
                     <div class="card-header d-flex justify-content-between align-items-center gap-1">
-                        <h4 class="card-title flex-grow-1">All Product List</h4>
+                        <h4 class="card-title flex-grow-1">Danh Sách Sản Phẩm</h4>
 
                         <a href="?act=product_create" class="btn btn-sm btn-primary">
-                            Add Product
+                            Thêm Sản Phẩm
                         </a>
-
-                        <div class="dropdown">
-                            <a href="#" class="dropdown-toggle btn btn-sm btn-outline-light" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                This Month
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-end">
-                                <!-- item-->
-                                <a href="#!" class="dropdown-item">Download</a>
-                                <!-- item-->
-                                <a href="#!" class="dropdown-item">Export</a>
-                                <!-- item-->
-                                <a href="#!" class="dropdown-item">Import</a>
-                            </div>
-                        </div>
                     </div>
                     <div>
                         <div class="table-responsive">
@@ -54,12 +39,12 @@
                                                 <label class="form-check-label" for="customCheck1"></label>
                                             </div>
                                         </th>
-                                        <th>Product Name & Size</th>
-                                        <th>Price</th>
-                                        <th>Stock</th>
-                                        <th>Category</th>
-                                        <th>Rating</th>
-                                        <th>Action</th>
+                                        <th>Tên Sản Phẩm & Kích Thước</th>
+                                        <th>Giá</th>
+                                        <th>Kho Hàng</th>
+                                        <th>Danh Mục</th>
+                                        <th>Đánh Giá</th>
+                                        <th>Hành Động</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -82,31 +67,33 @@
                                                 <input type="checkbox" class="form-check-input"
                                                     id="customCheck2_<?php echo $product['id']; ?>">
                                                 <label class="form-check-label"
-                                                    for="customCheck2_<?php echo $product['id']; ?>">&nbsp;</label>
+                                                    for="customCheck2_<?php echo $product['id']; ?>"> </label>
                                             </div>
                                         </td>
                                         <td>
                                             <div class="d-flex align-items-center gap-2">
                                                 <div
                                                     class="rounded bg-light avatar-md d-flex align-items-center justify-content-center">
-                                                    <img src="./public/admin/assets_admin/images/product<?php echo htmlspecialchars($product['hinh_anh'] ? $product['hinh_anh'] : 'public/admin/assets_admin/images/product/p-1.png'); ?>"
+                                                    <img src="/Duan1-main/public/admin/assets_admin/images/product/<?php echo htmlspecialchars($product['hinh_anh'] ? $product['hinh_anh'] : 'p-1.png'); ?>"
                                                         alt="<?php echo $product['ten_sp']; ?>" class="avatar-md">
                                                 </div>
                                                 <div>
                                                     <a href="?act=product_edit&id=<?php echo $product['id']; ?>"
                                                         class="text-dark fw-medium fs-15"><?php echo $product['ten_sp']; ?></a>
-                                                    <p class="text-muted mb-0 mt-1 fs-13"><span>Size :
-                                                        </span><?php echo $sizeText ? $sizeText : 'N/A'; ?></p>
+                                                    <p class="text-muted mb-0 mt-1 fs-13"><span>Kích Thước:
+                                                        </span><?php echo $sizeText ? $sizeText : 'Không Có'; ?></p>
                                                 </div>
                                             </div>
                                         </td>
-                                        <td>$<?php echo $product['gia_thap']; ?><?php echo ($product['gia_cao'] > $product['gia_thap']) ? ' - $' . $product['gia_cao'] : ''; ?>
+                                        <td><?php echo number_format($product['gia_thap'], 0, ',', '.'); ?>
+                                            VNĐ<?php echo ($product['gia_cao'] > $product['gia_thap']) ? ' - ' . number_format($product['gia_cao'], 0, ',', '.') . ' VNĐ' : ''; ?>
                                         </td>
                                         <td>
                                             <p class="mb-1 text-muted"><span
                                                     class="text-dark fw-medium"><?php echo $product['so_luong']; ?>
-                                                    Item</span> Left</p>
-                                            <p class="mb-0 text-muted"><?php echo $product['so_luong_ban'] ?? 0; ?> Sold
+                                                    Sản Phẩm</span> Còn Lại</p>
+                                            <p class="mb-0 text-muted"><?php echo $product['so_luong_ban'] ?? 0; ?> Đã
+                                                Bán
                                             </p>
                                         </td>
                                         <td><?php echo $product['ten_dm']; ?></td>
@@ -115,7 +102,7 @@
                                                 <i class="bx bxs-star align-text-top fs-14 text-warning me-1"></i>
                                                 <?php echo $ratingInfo['rating']; ?>
                                             </span>
-                                            <?php echo $ratingInfo['count']; ?> Review
+                                            <?php echo $ratingInfo['count']; ?> Đánh Giá
                                         </td>
                                         <td>
                                             <div class="d-flex gap-2">
@@ -142,7 +129,7 @@
 
                                     <?php if (empty($products)): ?>
                                     <tr>
-                                        <td colspan="7" class="text-center">No products found</td>
+                                        <td colspan="7" class="text-center">Không Tìm Thấy Sản Phẩm</td>
                                     </tr>
                                     <?php endif; ?>
                                 </tbody>
@@ -153,11 +140,11 @@
                     <div class="card-footer border-top">
                         <nav aria-label="Page navigation example">
                             <ul class="pagination justify-content-end mb-0">
-                                <li class="page-item"><a class="page-link" href="javascript:void(0);">Previous</a></li>
+                                <li class="page-item"><a class="page-link" href="javascript:void(0);">Trước</a></li>
                                 <li class="page-item active"><a class="page-link" href="javascript:void(0);">1</a></li>
                                 <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
                                 <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
-                                <li class="page-item"><a class="page-link" href="javascript:void(0);">Next</a></li>
+                                <li class="page-item"><a class="page-link" href="javascript:void(0);">Tiếp Theo</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -170,7 +157,7 @@
 
 <script>
 function confirmDelete(id) {
-    if (confirm("Are you sure you want to delete this product?")) {
+    if (confirm("Bạn có chắc chắn muốn xóa sản phẩm này không?")) {
         window.location.href = "?act=product_delete&id=" + id;
     }
 }
