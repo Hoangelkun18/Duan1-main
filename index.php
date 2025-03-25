@@ -21,6 +21,7 @@ $act = $_GET['act'] ?? '/';
 match ($act) {
     // Trang chủ
     '/' => (new HomeClient($db))->index(),
+    'home' => (new HomeClient($db))->index(),
     
     'admin' => (new HomeAdmin($db))->index(),
 
@@ -42,8 +43,25 @@ match ($act) {
     'discount' => (new HomeAdmin($db))->discount(),
     'discount_create' => (new HomeAdmin($db))->discountCreate(),
     'create_discount' => (new HomeAdmin($db))->create_discount(),
+
     // 'discount_edit' => (new HomeAdmin($db))->discountEdit($id),
     'edit_discount' => (new HomeAdmin($db))->edit_discount(),
     'discount_delete' => (new HomeAdmin($db))->discountDelete(),
+
+
+
+
+    //---------------------------------------------------------------------------
+
+    'shop' => (new HomeClient($db))->shop(),
+    'detail' => (new HomeClient($db))->detail(),
+    'cart' => (new HomeClient($db))->cart(),
+    'form_Address' => (new HomeClient($db))->form_Address(),
+    'order_success' => (new HomeClient($db))->order_success(),
+    'user' => (new HomeClient($db))->user(),
+    'login' => (new HomeClient($db))->login(),
+    'sign_up' => (new HomeClient($db))->sign_up(),
+
+
 
 };

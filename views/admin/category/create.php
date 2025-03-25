@@ -1,17 +1,7 @@
 <div class="page-content">
     <div class="container-xxl">
         <div class="Container">
-            <!-- Hiển thị thông báo -->
-            <?php if (isset($_SESSION['success_message'])): ?>
-            <div class="alert alert-success">
-                <?php echo $_SESSION['success_message']; unset($_SESSION['success_message']); ?>
-            </div>
-            <?php endif; ?>
-            <?php if (isset($_SESSION['error_message'])): ?>
-            <div class="alert alert-danger">
-                <?php echo $_SESSION['error_message']; unset($_SESSION['error_message']); ?>
-            </div>
-            <?php endif; ?>
+
 
             <div class="card">
                 <div class="card-header">

@@ -316,10 +316,6 @@
                                         phẩm</a>
                                 </li>
                                 <li class="sub-nav-item">
-                                    <a class="sub-nav-link" href="?act=product_edit">Sửa sản
-                                        phẩm</a>
-                                </li>
-                                <li class="sub-nav-item">
                                     <a class="sub-nav-link" href="?act=product_create">Thêm sản
                                         phẩm</a>
                                 </li>
@@ -340,10 +336,6 @@
                             <ul class="nav sub-navbar-nav">
                                 <li class="sub-nav-item">
                                     <a class="sub-nav-link" href="?act=category">Danh sách danh
-                                        mục</a>
-                                </li>
-                                <li class="sub-nav-item">
-                                    <a class="sub-nav-link" href="?act=category_edit">Sửa danh
                                         mục</a>
                                 </li>
                                 <li class="sub-nav-item">
@@ -386,10 +378,6 @@
                             <ul class="nav sub-navbar-nav">
                                 <li class="sub-nav-item">
                                     <a class="sub-nav-link" href="?act=discount">Danh sách mã giảm
-                                        giá</a>
-                                </li>
-                                <li class="sub-nav-item">
-                                    <a class="sub-nav-link" href="?act=edit_discount">Sửa mã giảm
                                         giá</a>
                                 </li>
                                 <li class="sub-nav-item">

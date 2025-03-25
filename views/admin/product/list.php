@@ -1,21 +1,16 @@
-<?php if(isset($_SESSION['success_message'])): ?>
-<div class="alert alert-success alert-dismissible fade show" role="alert">
-    <?php echo $_SESSION['success_message']; ?>
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-</div>
-<?php unset($_SESSION['success_message']); ?>
-<?php endif; ?>
-
-<?php if(isset($_SESSION['error_message'])): ?>
-<div class="alert alert-danger alert-dismissible fade show" role="alert">
-    <?php echo $_SESSION['error_message']; ?>
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-</div>
-<?php unset($_SESSION['error_message']); ?>
-<?php endif; ?>
 <div class="page-content">
     <div class="container-fluid">
-
+        <!-- Hiển thị thông báo -->
+        <?php if (isset($_SESSION['success_message'])): ?>
+        <div class="alert alert-success">
+            <?php echo $_SESSION['success_message']; unset($_SESSION['success_message']); ?>
+        </div>
+        <?php endif; ?>
+        <?php if (isset($_SESSION['error_message'])): ?>
+        <div class="alert alert-danger">
+            <?php echo $_SESSION['error_message']; unset($_SESSION['error_message']); ?>
+        </div>
+        <?php endif; ?>
         <div class="row">
             <div class="col-xl-12">
                 <div class="card">

@@ -11,7 +11,7 @@
     <meta name="author" content="pixelstrap" />
     <link rel="icon" href="/Duan1-main/public/client/assets/images/favicon.png" type="image/x-icon" />
     <link rel="shortcut icon" href="/Duan1-main/public/client/assets/images/favicon.png" type="image/x-icon" />
-    <title>Katie - Online Fashion Store</title>
+    <title>Zenca - Online Fashion Store</title>
     <!-- Favicon icon-->
     <link rel="icon" href="/Duan1-main/public/client/assets/images/favicon.png" type="image/x-icon" />
     <link rel="shortcut icon" href="/Duan1-main/public/client/assets/images/favicon.png" type="image/x-icon" />
@@ -33,13 +33,13 @@
 </head>
 
 <body class="skeleton_body">
-    <div class="tap-top">
+    <!-- <div class="tap-top">
         <div><i class="fa-solid fa-angle-up"></i></div>
-    </div>
-    <span class="cursor"><span class="cursor-move-inner"><span class="cursor-inner"></span></span><span
+    </div> -->
+    <!-- <span class="cursor"><span class="cursor-move-inner"><span class="cursor-inner"></span></span><span
             class="cursor-move-outer"><span class="cursor-outer"></span></span></span>
-    <div class="skeleton_loader">
-        <header>
+    <div class="skeleton_loader"> -->
+    <!-- <header>
             <div class="top_header">
                 <p></p>
             </div>
@@ -115,159 +115,159 @@
                     </div>
                 </div>
             </div>
-        </header>
-        <section class="pt-0 home-section-3">
-            <div class="container-fluid">
-                <div class="row align-items-center">
-                    <div class="col-xxl-2 col-xl-4 d-none d-xl-block">
-                        <ul class="menu">
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ul>
-                    </div>
-                    <div class="col pe-0">
-                        <a class="home-banner p-right" href="#">
-                            <div class="img-wrapper"></div>
-                            <div class="contain-banner">
-                                <div>
-                                    <h4></h4>
-                                    <h1></h1>
-                                    <p></p>
-                                    <span></span>
-                                    <h5></h5>
-                                </div>
+        </header> -->
+    <!-- <section class="pt-0 home-section-3">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-xxl-2 col-xl-4 d-none d-xl-block">
+                    <ul class="menu">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <div class="col pe-0">
+                    <a class="home-banner p-right" href="#">
+                        <div class="img-wrapper"></div>
+                        <div class="contain-banner">
+                            <div>
+                                <h4></h4>
+                                <h1></h1>
+                                <p></p>
+                                <span></span>
+                                <h5></h5>
                             </div>
-                        </a>
-                    </div>
+                        </div>
+                    </a>
                 </div>
             </div>
-        </section>
-        <section class="section-t-space">
-            <div class="custom-container container service">
-                <ul>
-                    <li>
-                        <div class="service-block">
-                            <div class="img-wrapper"></div>
-                            <div>
-                                <h6></h6>
-                                <p></p>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="service-block">
-                            <div class="img-wrapper"></div>
-                            <div>
-                                <h6></h6>
-                                <p></p>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="service-block">
-                            <div class="img-wrapper"></div>
-                            <div>
-                                <h6></h6>
-                                <p></p>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="service-block border-0">
-                            <div class="img-wrapper"></div>
-                            <div>
-                                <h6></h6>
-                                <p></p>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </section>
-        <section class="section-b-space">
-            <div class="custom-container container">
-                <div class="row">
-                    <div class="col-xxl-5 col-md-8">
-                        <div class="row gy-4 ratio_45">
-                            <div class="col-12">
-                                <a class="collection-banner p-left" href="#">
-                                    <div class="img-wrapper"></div>
-                                    <div class="contain-banner">
-                                        <div>
-                                            <h4></h4>
-                                            <h3></h3>
-                                            <h6></h6>
-                                            <h5></h5>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-12">
-                                <a class="collection-banner p-right" href="#">
-                                    <div class="img-wrapper"></div>
-                                    <div class="contain-banner">
-                                        <div>
-                                            <h4></h4>
-                                            <h3></h3>
-                                            <h6></h6>
-                                            <h5></h5>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
+        </div>
+    </section> -->
+    <!-- <section class="section-t-space">
+        <div class="custom-container container service">
+            <ul>
+                <li>
+                    <div class="service-block">
+                        <div class="img-wrapper"></div>
+                        <div>
+                            <h6></h6>
+                            <p></p>
                         </div>
                     </div>
-                    <div class="col-xxl-3 col-4 d-none d-md-block">
-                        <div class="special-offer-slider">
-                            <h4></h4>
-                            <div class="swiper special-offer-slide">
-                                <div class="swiper-wrapper trending-products">
-                                    <div class="swiper-slide product-box-4">
-                                        <div class="img-wrapper">
-                                            <div class="product-image"></div>
-                                        </div>
-                                        <div class="product-detail">
-                                            <div>
-                                                <h6></h6>
-                                                <p></p>
-                                            </div>
-                                            <ul>
-                                                <li></li>
-                                            </ul>
-                                        </div>
-                                        <div class="product-size-stock">
-                                            <div class="size-box">
-                                                <span> </span>
-                                                <p></p>
-                                            </div>
-                                            <div class="size-box">
-                                                <span> </span>
-                                                <p></p>
-                                            </div>
-                                        </div>
+                </li>
+                <li>
+                    <div class="service-block">
+                        <div class="img-wrapper"></div>
+                        <div>
+                            <h6></h6>
+                            <p></p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="service-block">
+                        <div class="img-wrapper"></div>
+                        <div>
+                            <h6></h6>
+                            <p></p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="service-block border-0">
+                        <div class="img-wrapper"></div>
+                        <div>
+                            <h6></h6>
+                            <p></p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section> -->
+    <!-- <section class="section-b-space">
+        <div class="custom-container container">
+            <div class="row">
+                <div class="col-xxl-5 col-md-8">
+                    <div class="row gy-4 ratio_45">
+                        <div class="col-12">
+                            <a class="collection-banner p-left" href="#">
+                                <div class="img-wrapper"></div>
+                                <div class="contain-banner">
+                                    <div>
+                                        <h4></h4>
+                                        <h3></h3>
+                                        <h6></h6>
+                                        <h5></h5>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
-                    </div>
-                    <div class="col-xxl-4 d-none d-xxl-block">
-                        <div class="offer-banner-3 ratio1_3">
-                            <div class="img-wrapper"></div>
+                        <div class="col-12">
+                            <a class="collection-banner p-right" href="#">
+                                <div class="img-wrapper"></div>
+                                <div class="contain-banner">
+                                    <div>
+                                        <h4></h4>
+                                        <h3></h3>
+                                        <h6></h6>
+                                        <h5></h5>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
+                <div class="col-xxl-3 col-4 d-none d-md-block">
+                    <div class="special-offer-slider">
+                        <h4></h4>
+                        <div class="swiper special-offer-slide">
+                            <div class="swiper-wrapper trending-products">
+                                <div class="swiper-slide product-box-4">
+                                    <div class="img-wrapper">
+                                        <div class="product-image"></div>
+                                    </div>
+                                    <div class="product-detail">
+                                        <div>
+                                            <h6></h6>
+                                            <p></p>
+                                        </div>
+                                        <ul>
+                                            <li></li>
+                                        </ul>
+                                    </div>
+                                    <div class="product-size-stock">
+                                        <div class="size-box">
+                                            <span> </span>
+                                            <p></p>
+                                        </div>
+                                        <div class="size-box">
+                                            <span> </span>
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xxl-4 d-none d-xxl-block">
+                    <div class="offer-banner-3 ratio1_3">
+                        <div class="img-wrapper"></div>
+                    </div>
+                </div>
             </div>
-        </section>
-    </div>
+        </div>
+    </section> -->
+    <!-- </div> -->
     <header>
         <div class="top_header">
             <p>
@@ -324,183 +324,19 @@
                                     Back<i class="fa-solid fa-angle-right ps-2" aria-hidden="true"></i>
                                 </li>
                                 <li>
-                                    <a class="nav-link" href="#">Home <span> </span></a>
+                                    <a class="nav-link" href="?act=home">Home <span> </span></a>
 
                                 </li>
                                 <li>
-                                    <a class="nav-link" href="#">Shop<span> </span></a>
-                                    <ul class="nav-submenu">
-                                        <li>
-                                            <a href="collection-left-sidebar.html">Collection Left Sidebar</a>
-                                        </li>
-                                        <li>
-                                            <a href="collection-right-sidebar.html">Collection Right Sidebar</a>
-                                        </li>
-                                        <li>
-                                            <a href="collection-no-sidebar.html">Collection No Sidebar</a>
-                                        </li>
-                                        <li>
-                                            <a href="collection-3-grid.html">Collection 3 Grid</a>
-                                        </li>
-                                        <li>
-                                            <a href="collection-4-grid.html">Collection 4 Grid</a>
-                                        </li>
-                                        <li>
-                                            <a href="collection-list-view.html">Collection List View
-                                                <span class="badge-sm theme-default">new</span></a>
-                                        </li>
-                                        <li>
-                                            <a href="collection-slider.html">Collection Slider</a>
-                                        </li>
-                                        <li>
-                                            <a href="offcanvas-filter.html">Offcanvas Filter </a>
-                                        </li>
-                                        <li>
-                                            <a href="load-more.html">Load More<span
-                                                    class="badge-sm danger-color animated">Hot</span></a>
-                                        </li>
-                                    </ul>
+                                    <a class="nav-link" href="?act=shop">Shop<span> </span></a>
+
                                 </li>
                                 <li>
                                     <a class="nav-link" href="#">Product
                                         <span> </span></a>
-                                    <div class="mega-menu p-0 overflow-hidden">
-                                        <div class="row">
-                                            <div class="col-xl-4">
-                                                <ul class="p-2">
-                                                    <li><a href="product.html">Product</a></li>
-                                                    <li>
-                                                        <a href="product-sticky.html">Product Sticky</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="product-four-image.html">Product image</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="product-bottom.html">Product Bottom</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="product-video.html">Product Video<span
-                                                                class="badge-sm theme-default">new</span></a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="product-accordion.html">Product Accordion</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="product-sold-out.html">Product Sold Out
-                                                            <span class="badge-sm danger-color animated">Hot</span></a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="without-thumbnail.html">Without Thumbnail
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-xl-4">
-                                                <ul class="p-2">
-                                                    <li>
-                                                        <a href="product-bundle.html">Bundle (Cross Sale)
-                                                            <span class="badge-sm danger-color animated">Hot</span></a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="variant-rectangle.html">Variant Rectangle
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="variant-images.html">
-                                                            Variant Image Swatch
-                                                            <span class="badge-sm theme-default">new</span></a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="variant-color.html">Variant Color</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="variant-radio.html">Variant Radio</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="variant-dropdown.html">Variant Dropdown
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="inner-zoom.html">Inner Zoom Images
-                                                            <span class="badge-sm danger-color animated">Hot</span></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-xl-4 d-none d-xl-block px-0">
-                                                <div class="menu-banner">
-                                                    <img class="w-100 img-fluid"
-                                                        src="/Duan1-main/public/client/assets/images/mega-menu/banner.png"
-                                                        alt="" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </li>
-                                <li>
-                                    <a class="nav-link" href="#">FashiOffers
-                                        <span> </span>
-                                        <p class="lable-nav">Hot</p>
-                                    </a>
-                                    <div class="mega-menu p-0 overflow-hidden">
-                                        <div class="row gy-4 align-items-center">
-                                            <div class="col-xl-5">
-                                                <div class="mega-img">
-                                                    <div class="img-1">
-                                                        <img class="img-fluid"
-                                                            src="/Duan1-main/public/client/assets/images/mega-menu/5.jpg"
-                                                            alt="" />
-                                                    </div>
-                                                    <div class="img-1">
-                                                        <img class="img-fluid"
-                                                            src="/Duan1-main/public/client/assets/images/mega-menu/6.jpg"
-                                                            alt="" />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-2 px-0">
-                                                <ul>
-                                                    <li>
-                                                        <a
-                                                            href="https://themes.pixelstrap.net/katie/email-template/welcome.html">Welcome
-                                                            Template<span
-                                                                class="badge-sm danger-color animated">Hot</span></a>
-                                                    </li>
-                                                    <li>
-                                                        <a
-                                                            href="https://themes.pixelstrap.net/katie/email-template/order-success.html">Order
-                                                            Success</a>
-                                                    </li>
-                                                    <li>
-                                                        <a
-                                                            href="https://themes.pixelstrap.net/katie/email-template/reset-password.html">Reset
-                                                            Password</a>
-                                                    </li>
-                                                    <li>
-                                                        <a
-                                                            href="https://themes.pixelstrap.net/katie/invoice/invoice-1.html">Invoice
-                                                            1</a>
-                                                    </li>
-                                                    <li>
-                                                        <a
-                                                            href="https://themes.pixelstrap.net/katie/invoice/invoice-2.html">Invoice
-                                                            2</a>
-                                                    </li>
-                                                    <li>
-                                                        <a
-                                                            href="https://themes.pixelstrap.net/katie/invoice/invoice-3.html">Invoice
-                                                            3</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-xl-5">
-                                                <img class="img-fluid"
-                                                    src="/Duan1-main/public/client/assets/images/mega-menu/1.png"
-                                                    alt="" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
+
+                                <!-- <li>
                                     <a class="nav-link" href="#">Page <span> </span></a>
                                     <ul class="nav-submenu">
                                         <li><a href="search.html">Search</a></li>
@@ -537,8 +373,8 @@
                                         <li><a href="otp.html"> otp </a></li>
                                         <li><a href="sign-up.html"> Sign Up </a></li>
                                     </ul>
-                                </li>
-                                <li>
+                                </li> -->
+                                <!-- <li>
                                     <a class="nav-link" href="#">Blog<span> </span></a>
                                     <ul class="nav-submenu">
                                         <li>
@@ -554,7 +390,7 @@
                                             <a href="blog-no-sidebar.html">Blog No Sidebar</a>
                                         </li>
                                     </ul>
-                                </li>
+                                </li> -->
                                 <li><a class="nav-link" href="contact.html">Contact </a></li>
                             </ul>
                         </nav>
@@ -569,16 +405,16 @@
                                         <i class="iconsax" data-icon="search-normal-2"></i>
                                     </button>
                                 </li>
-                                <li>
+                                <!-- <li>
                                     <a href="wishlist.html"><i class="iconsax" data-icon="heart"></i><span
                                             class="cart_qty_cls">2</span></a>
-                                </li>
+                                </li> -->
                                 <li class="onhover-div">
                                     <a href="#"><i class="iconsax" data-icon="user-2"></i></a>
                                     <div class="onhover-show-div user">
                                         <ul>
-                                            <li><a href="login.html">Login </a></li>
-                                            <li><a href="sign-up.html">Register</a></li>
+                                            <li><a href="?act=login">Login </a></li>
+                                            <li><a href="?act=sign_up">Register</a></li>
                                         </ul>
                                     </div>
                                 </li>

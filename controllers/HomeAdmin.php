@@ -13,7 +13,7 @@ class HomeAdmin {
     }
 
     public function product() {
-        require_once './models/Product.php';
+        require_once './models/admin/Product.php';
         $productModel = new Product($this->db);
         $products = $productModel->getAll();
         
@@ -23,8 +23,8 @@ class HomeAdmin {
     }
 
     public function productEdit() {
-        require_once './models/Product.php';
-        require_once './models/Category.php';
+        require_once './models/admin/Product.php';
+        require_once './models/admin/Category.php';
         $productModel = new Product($this->db);
         $categoryModel = new Category($this->db);
     
@@ -52,6 +52,7 @@ class HomeAdmin {
     
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // Xử lý file upload
+
             $uploadDir = './public/admin/assets_admin/images/product/';
             $mainImage = $product['hinh_anh']; // Giữ ảnh cũ nếu không upload ảnh mới
             $additionalImages = [];
@@ -130,8 +131,8 @@ class HomeAdmin {
     }
 
     public function productCreate() {
-        require_once './models/Product.php';
-        require_once './models/Category.php';
+        require_once './models/admin/Product.php';
+        require_once './models/admin/Category.php';
         $productModel = new Product($this->db);
         $categoryModel = new Category($this->db);
         
@@ -228,7 +229,7 @@ class HomeAdmin {
     public function productDelete() {
         if (isset($_GET['id'])) {
             $id = $_GET['id'];
-            require_once './models/Product.php';
+            require_once './models/admin/Product.php';
             $productModel = new Product($this->db);
             $result = $productModel->delete($id);
             
@@ -243,7 +244,7 @@ class HomeAdmin {
     }
 
     public function category() {
-        require_once './models/Category.php';
+        require_once './models/admin/Category.php';
         $categoryModel = new Category($this->db);
         $categories = $categoryModel->getAll();
         
@@ -253,7 +254,7 @@ class HomeAdmin {
     }
 
     public function categoryCreate() {
-        require_once './models/Category.php';
+        require_once './models/admin/Category.php';
         $categoryModel = new Category($this->db);
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -275,7 +276,7 @@ class HomeAdmin {
     }
 
     public function categoryEdit() {
-        require_once './models/Category.php';
+        require_once './models/admin/Category.php';
         $categoryModel = new Category($this->db);
 
         if (isset($_GET['id'])) {
@@ -306,7 +307,7 @@ class HomeAdmin {
     }
 
     public function categoryDelete() {
-        require_once './models/Category.php';
+        require_once './models/admin/Category.php';
         $categoryModel = new Category($this->db);
     
         if (isset($_GET['id'])) {
@@ -334,7 +335,7 @@ class HomeAdmin {
     
     //ma giam gia
     public function discount() {
-        require_once './models/Discount.php';
+        require_once './models/admin/Discount.php';
         $discountModel = new Discount($this->db);
         $discounts = $discountModel->getAll();
         $view = 'discount/list';
@@ -359,7 +360,7 @@ class HomeAdmin {
             $loai_km = $_POST['loai_km'];
             $trang_thai = $_POST['trang_thai'];
             
-            require_once './models/Discount.php';
+            require_once './models/admin/Discount.php';
             $discountModel = new Discount($this->db);
     
             $result = $discountModel->update($id, $ten_km, $ma_km, $ngay_bat_dau, $ngay_ket_thuc, $loai_km, $trang_thai);
@@ -375,7 +376,7 @@ class HomeAdmin {
         } else {
             // Lấy thông tin khuyến mãi để hiển thị trong form
             $id = $_GET['id'];
-            require_once './models/Discount.php';
+            require_once './models/admin/Discount.php';
             $discountModel = new Discount($this->db);
             $discount = $discountModel->getById($id); // Lấy thông tin khuyến mãi theo ID
             
@@ -402,7 +403,7 @@ class HomeAdmin {
     public function discountDelete() {
         if (isset($_GET['id'])) {
             $id = $_GET['id'];
-            require_once './models/Discount.php';
+            require_once './models/admin/Discount.php';
             $discountModel = new Discount($this->db);
             $result = $discountModel->delete($id);
             
@@ -431,7 +432,7 @@ $ngay_ket_thuc = $_POST['ngay_ket_thuc'];
                 exit();
             }
 
-            require_once './models/Discount.php';
+            require_once './models/admin/Discount.php';
             $discountModel = new Discount($this->db);
             $result = $discountModel->create($ten_km, $ma_km, $ngay_bat_dau, $ngay_ket_thuc, $loai_km, $trang_thai);
             
