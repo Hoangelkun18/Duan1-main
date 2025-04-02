@@ -1128,7 +1128,7 @@
 </section>
 <section class="section-t-space">
     <div class="custom-container container">
-        <div class="style-banner">
+        <!-- <div class="style-banner">
             <div class="row gy-4 align-items-end">
                 <div class="col-sm-6 col-12 ratio_square-4">
                     <a href="collection-left-sidebar.html">
@@ -1159,10 +1159,10 @@
                             alt="" /></a>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 </section>
-<section class="section-t-space">
+<!-- <section class="section-t-space">
     <div class="custom-container container flash-box">
         <div class="row gy-3">
             <div class="col-12">
@@ -1764,4 +1764,4 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->

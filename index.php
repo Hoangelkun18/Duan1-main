@@ -48,6 +48,11 @@ match ($act) {
     'edit_discount' => (new HomeAdmin($db))->edit_discount(),
     'discount_delete' => (new HomeAdmin($db))->discountDelete(),
 
+    'customer' => (new HomeAdmin($db))->customer(),
+    'customer_delete' => (new HomeAdmin($db))->customerDelete(),
+    'customer_create' => (new HomeAdmin($db))->customerCreate(),
+    // 'customer_edit' (new HomeAdmin($db))->customerEdit(),
+
 
 
 

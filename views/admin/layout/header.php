@@ -387,6 +387,26 @@
                             </ul>
                         </div>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link menu-arrow" href="#sidebarCustomers" data-bs-toggle="collapse" role="button"
+                            aria-expanded="false" aria-controls="sidebarCustomers">
+                            <span class="nav-icon">
+                                <iconify-icon icon="solar:users-group-two-rounded-bold-duotone"></iconify-icon>
+                            </span>
+                            <span class="nav-text">Tài khoản </span>
+                        </a>
+                        <div class="collapse" id="sidebarCustomers">
+                            <ul class="nav sub-navbar-nav">
+
+                                <li class="sub-nav-item">
+                                    <a class="sub-nav-link" href="?act=customer">Danh sách tài khoản </a>
+                                </li>
+                                <li class="sub-nav-item">
+                                    <a class="sub-nav-link" href="?act=customer_create">Thêm tài khoản </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>

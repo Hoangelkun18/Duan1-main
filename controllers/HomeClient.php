@@ -25,10 +25,22 @@ class HomeClient
     }
 
     public function detail() {
+        require_once './models/client/detail.php';
         $view = 'layout/detail';
         $title = 'detail';
-        require_once './views/client/main.php';
+        $id = $_GET['id'];
+    
+        if (!$id) {
+            header('Location: ?act=shop');
+            exit();
+        } else {
+            $productModel = new Detail($this->db); // Tạo một đối tượng model
+            $productDetail = $productModel->getAll($id); // Lấy chi tiết sản phẩm
+            $relatedProduct = $productModel->getProd($id); // Lấy sản phẩm liên quan
+            require_once './views/client/main.php';
+        }
     }
+    
 
     public function cart() {
         $view = 'layout/cart';

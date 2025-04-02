@@ -1,57 +1,32 @@
 <section class="section-b-space pt-0 product-thumbnail-page">
     <div class="custom-container container">
         <div class="row gy-4">
+            <!-- ---------------------------------------------------------------------------- -->
+
             <div class="col-lg-6">
                 <div class="row sticky">
                     <div class="col-sm-2 col-3">
                         <div class="swiper product-slider product-slider-img">
                             <div class="swiper-wrapper">
+                                <?php foreach($productDetail as $prod): ?>
                                 <div class="swiper-slide"> <img
-                                        src="/Duan1-main/public/client/assets/images/product/slider/1.jpg" alt="">
+                                        src="/Duan1-main/public/admin/assets_admin/images/product/<?= $prod['hinh_anh']?>"
+                                        alt="">
                                 </div>
-                                <div class="swiper-slide"> <img
-                                        src="/Duan1-main/public/client/assets/images/product/slider/2.jpg" alt="">
-                                </div>
-                                <div class="swiper-slide"> <img
-                                        src="/Duan1-main/public/client/assets/images/product/slider/3.jpg" alt="">
-                                </div>
-                                <div class="swiper-slide"> <img
-                                        src="/Duan1-main/public/client/assets/images/product/slider/4.jpg" alt=""><span>
-                                        <i class="iconsax" data-icon="play"></i></span></div>
-                                <div class="swiper-slide"> <img
-                                        src="/Duan1-main/public/client/assets/images/product/slider/5.jpg" alt="">
-                                </div>
-                                <div class="swiper-slide"> <img
-                                        src="/Duan1-main/public/client/assets/images/product/slider/6.jpg" alt="">
-                                </div>
-                                <div class="swiper-slide"> <img
-                                        src="/Duan1-main/public/client/assets/images/product/slider/7.jpg" alt="">
-                                </div>
+                                <?php endforeach; ?>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-10 col-9">
                         <div class="swiper product-slider-thumb product-slider-img-1">
                             <div class="swiper-wrapper ratio_square-2">
-                                <div class="swiper-slide"> <img class="bg-img"
-                                        src="/Duan1-main/public/client/assets/images/product/slider/1.jpg" alt=""></div>
-                                <div class="swiper-slide"> <img class="bg-img"
-                                        src="/Duan1-main/public/client/assets/images/product/slider/2.jpg" alt=""></div>
-                                <div class="swiper-slide"> <img class="bg-img"
-                                        src="/Duan1-main/public/client/assets/images/product/slider/3.jpg" alt=""></div>
+                                <?php foreach($productDetail as $prod): ?>
                                 <div class="swiper-slide">
-                                    <video class="video-tag" loop="" autoplay="" muted="">
-                                        <source
-                                            src="https://themes.pixelstrap.net/katie/assets/images/product/slider/clothing.mp4"
-                                            type="video/mp4"> Your browser does not support the video tag.
-                                    </video>
+                                    <img class="bg-img"
+                                        src="/Duan1-main/public/admin/assets_admin/images/product/<?= $prod['hinh_anh']?>"
+                                        alt="">
                                 </div>
-                                <div class="swiper-slide"> <img class="bg-img"
-                                        src="/Duan1-main/public/client/assets/images/product/slider/5.jpg" alt=""></div>
-                                <div class="swiper-slide"> <img class="bg-img"
-                                        src="/Duan1-main/public/client/assets/images/product/slider/6.jpg" alt=""></div>
-                                <div class="swiper-slide"> <img class="bg-img"
-                                        src="/Duan1-main/public/client/assets/images/product/slider/7.jpg" alt=""></div>
+                                <?php endforeach; ?>
                             </div>
                         </div>
                     </div>
@@ -60,153 +35,84 @@
             <div class="col-lg-6">
                 <div class="product-detail-box">
                     <div class="product-option">
-                        <div class="move-fast-box d-flex align-items-center gap-1"><img
-                                src="/Duan1-main/public/client/assets/images/gif/fire.gif" alt="">
-                            <p>Move fast!</p>
-                        </div>
-                        <h3>Rustic Minidress with Halterneck</h3>
-                        <p>$20.00
-                            <del>$35.00</del><span class="offer-btn">25% off</span>
+                        <?php foreach($productDetail as $prod): 
+                             $danh_sach_mau = explode(',', $prod['danh_sach_mau']);  // Tách danh sách màu sắc thành mảng
+                             $danh_sach_kich_co = explode(',', $prod['danh_sach_kich_co']);  // Tách danh sách kích cỡ thành mảng
+                         ?>
+
+
+                        <h3><?=$prod['ten_sp'] ?></h3>
+                        <p><?=$prod['gia_thap'] ?>
+                            <del><?=$prod['gia_km_cao'] ?></del><span class="offer-btn">25% off</span>
                         </p>
                         <div class="rating">
-                            <ul>
-                                <li> <i class="fa-solid fa-star"> </i><i class="fa-solid fa-star"> </i><i
-                                        class="fa-solid fa-star"> </i><i class="fa-solid fa-star-half-stroke"></i><i
-                                        class="fa-regular fa-star"></i></li>
-                                <li>(4.7) Rating</li>
-                            </ul>
-                            <p>Dressing up. People just don't do it anymore. We have to change that. Give me time and
-                                I'll give you a revolution. What I hate is nasty, ugly people. The market is like a
-                                language, and you have to be able to understand what they're saying. </p>
+                            <p><?=$prod['mo_ta'] ?></p>
                         </div>
-                        <div class="buy-box border-buttom">
-                            <ul>
-                                <li> <span data-bs-toggle="modal" data-bs-target="#size-chart" title="Quick View"
-                                        tabindex="0"><i class="iconsax me-2" data-icon="ruler"></i>Size Chart</span>
-                                </li>
-                                <li> <span data-bs-toggle="modal" data-bs-target="#terms-conditions-modal"
-                                        title="Quick View" tabindex="0"><i class="iconsax me-2"
-                                            data-icon="truck"></i>Delivery & return</span></li>
-                                <li> <span data-bs-toggle="modal" data-bs-target="#question-box" title="Quick View"
-                                        tabindex="0"><i class="iconsax me-2" data-icon="question-message"></i>Ask a
-                                        Question</span></li>
-                            </ul>
-                        </div>
+
                         <div class="d-flex">
                             <div>
                                 <h5>Size:</h5>
                                 <div class="size-box">
                                     <ul class="selected">
-                                        <li><a href="#">s</a></li>
-                                        <li><a href="#">m</a></li>
-                                        <li class="active"><a href="#">l</a></li>
-                                        <li><a href="#">xl </a></li>
+                                        <?php foreach($danh_sach_kich_co as $kich_co ): ?>
+                                        <li><?= $kich_co ?></li>
+                                        <?php endforeach; ?>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                         <div>
                             <h5>Color:</h5>
-                            <div class="color-box">
+                            <div class="size-box">
                                 <ul class="color-variant">
-                                    <li class="bg-color-brown"></li>
-                                    <li class="bg-color-chocolate"></li>
-                                    <li class="bg-color-coffee"></li>
-                                    <li class="bg-color-black"></li>
+                                    <?php foreach($danh_sach_mau as $mau): ?>
+                                    <li><?= $mau ?></li>
+                                    <?php endforeach; ?>
                                 </ul>
                             </div>
                         </div>
                         <div class="quantity-box d-flex align-items-center gap-3">
                             <div class="quantity">
-                                <button class="minus" type="button"><i class="fa-solid fa-minus"></i></button>
+                                <button class="minus" type="button">-</button>
                                 <input type="number" value="1" min="1" max="20">
-                                <button class="plus" type="button"><i class="fa-solid fa-plus"></i></button>
+                                <button class="plus" type="button">+</button>
                             </div>
                             <div class="d-flex align-items-center gap-3 w-100"> <a class="btn btn_black sm" href="#"
                                     data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
                                     aria-controls="offcanvasRight">Add To Cart</a><a class="btn btn_outline sm"
                                     href="#">Buy Now</a></div>
                         </div>
-                        <div class="buy-box">
-                            <ul>
-                                <li> <a href="wishlist.html"> <i class="fa-regular fa-heart me-2"></i>Add To
-                                        Wishlist</a></li>
-                                <li> <a href="compare.html"> <i class="fa-solid fa-arrows-rotate me-2"></i>Add To
-                                        Compare</a></li>
-                                <li> <a href="#" data-bs-toggle="modal" data-bs-target="#social-box" title="Quick View"
-                                        tabindex="0"><i class="fa-solid fa-share-nodes me-2"></i>Share</a></li>
-                            </ul>
-                        </div>
-                        <div class="sale-box">
-                            <div class="d-flex align-items-center gap-2"><img
-                                    src="/Duan1-main/public/client/assets/images/gif/timer.gif" alt="">
-                                <p>Limited Time Left! Hurry, Sale Ending!</p>
-                            </div>
-                            <div class="countdown">
-                                <ul class="clockdiv1">
-                                    <li>
-                                        <div class="timer">
-                                            <div class="days"></div>
-                                        </div><span class="title">Days</span>
-                                    </li>
-                                    <li>:</li>
-                                    <li>
-                                        <div class="timer">
-                                            <div class="hours"></div>
-                                        </div><span class="title">Hours</span>
-                                    </li>
-                                    <li>:</li>
-                                    <li>
-                                        <div class="timer">
-                                            <div class="minutes"></div>
-                                        </div><span class="title">Min</span>
-                                    </li>
-                                    <li>:</li>
-                                    <li>
-                                        <div class="timer">
-                                            <div class="seconds"></div>
-                                        </div><span class="title">Sec</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+
                         <div class="dz-info">
                             <ul>
                                 <li>
                                     <div class="d-flex align-items-center gap-2">
-                                        <h6>Sku:</h6>
-                                        <p> SKU_45 </p>
+                                        <h6>Có sẵn: </h6>
+                                        <p>Đặt hàng trước</p>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="d-flex align-items-center gap-2">
-                                        <h6>Available: </h6>
-                                        <p>Pre-Order</p>
+                                        <h6>Danh mục: </h6>
+                                        <p><?=$prod['ten_dm'] ?>-
+                                            <?=$prod['id_dm'] ?></p>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="d-flex align-items-center gap-2">
-                                        <h6>Tags: </h6>
-                                        <p>Color Pink Clay , Athletic, Accessories, Vendor Kalles</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="d-flex align-items-center gap-2">
-                                        <h6>Vendor: </h6>
-                                        <p> Balenciaga</p>
+                                        <h6>Số lượng:</h6>
+                                        <p><?=$prod['so_luong'] ?></p>
                                     </div>
                                 </li>
                             </ul>
                         </div>
-                        <div class="share-option">
-                            <!-- <h5>Secure Checkout </h5><img class="img-fluid"
-                                src="/Duan1-main/public/client/assets/images/other-img/secure_payments.png" alt=""> -->
-                        </div>
+                        <?php endforeach; ?>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <!-- ----------------------------------------------------------------------------------------------------------------------------------------------- -->
     <div class="product-section-box x-small-section pt-0">
         <div class="custom-container container">
             <div class="row">
@@ -609,79 +515,38 @@
 <section class="section-b-space pt-0">
     <div class="custom-container container product-contain">
         <div class="title text-start">
-            <h3>Related Products</h3>
+            <h3>Sản phẩm liên quan</h3>
             <svg>
                 <use href="https://themes.pixelstrap.net/katie/assets/svg/icon-sprite.svg#main-line"></use>
             </svg>
         </div>
         <div class="swiper special-offer-slide-2">
             <div class="swiper-wrapper ratio1_3">
+                <?php foreach($relatedProduct as $related ): ?>
                 <div class="swiper-slide">
+
                     <div class="product-box-3">
                         <div class="img-wrapper">
-                            <div class="label-block"><span class="lable-1">NEW</span><a class="label-2 wishlist-icon"
-                                    href="javascript:void(0)" tabindex="0"><i class="iconsax" data-icon="heart"
-                                        aria-hidden="true" data-bs-toggle="tooltip"
-                                        data-bs-title="Add to Wishlist"></i></a></div>
-                            <div class="product-image"><a class="pro-first" href="product.html"> <img class="bg-img"
-                                        src="/Duan1-main/public/client/assets/images/product/product-3/11.jpg"
-                                        alt="product"></a><a class="pro-sec" href="product.html"> <img class="bg-img"
-                                        src="/Duan1-main/public/client/assets/images/product/product-3/9.jpg"
-                                        alt="product"></a></div>
-                            <div class="cart-info-icon"> <a href="#" data-bs-toggle="modal" data-bs-target="#addtocart"
-                                    tabindex="0"><i class="iconsax" data-icon="basket-2" aria-hidden="true"
-                                        data-bs-toggle="tooltip" data-bs-title="Add to cart"> </i></a><a
-                                    href="compare.html" tabindex="0"><i class="iconsax" data-icon="arrow-up-down"
-                                        aria-hidden="true" data-bs-toggle="tooltip" data-bs-title="Compare"></i></a><a
-                                    href="#" data-bs-toggle="modal" data-bs-target="#quick-view" tabindex="0"><i
-                                        class="iconsax" data-icon="eye" aria-hidden="true" data-bs-toggle="tooltip"
-                                        data-bs-title="Quick View"></i></a></div>
-                            <div class="countdown">
-                                <ul class="clockdiv2">
-                                    <li>
-                                        <div class="timer">
-                                            <div class="days"></div>
-                                        </div><span class="title">Days</span>
-                                    </li>
-                                    <li class="dot"> <span>:</span></li>
-                                    <li>
-                                        <div class="timer">
-                                            <div class="hours"></div>
-                                        </div><span class="title">Hours</span>
-                                    </li>
-                                    <li class="dot"> <span>:</span></li>
-                                    <li>
-                                        <div class="timer">
-                                            <div class="minutes"></div>
-                                        </div><span class="title">Min</span>
-                                    </li>
-                                    <li class="dot"> <span>:</span></li>
-                                    <li>
-                                        <div class="timer">
-                                            <div class="seconds"></div>
-                                        </div><span class="title">Sec</span>
-                                    </li>
-                                </ul>
+                            <div class="product-image">
+                                <a class="" href="#"> <img class="bg-img"
+                                        src="/Duan1-main/public/admin/assets_admin/images/product/<?php echo $related['hinh_anh']; ?>"
+                                        alt="product"></a>
                             </div>
+
                         </div>
                         <div class="product-detail">
-                            <ul class="rating">
-                                <li><i class="fa-solid fa-star"></i></li>
-                                <li><i class="fa-solid fa-star"></i></li>
-                                <li><i class="fa-solid fa-star"></i></li>
-                                <li><i class="fa-solid fa-star-half-stroke"></i></li>
-                                <li><i class="fa-regular fa-star"></i></li>
-                                <li>4.3</li>
-                            </ul><a href="product.html">
-                                <h6>Greciilooks Women's Stylish Top</h6>
+                            <a href="?act=detail&id=<?=$related['id_san_pham']?>">
+                                <h6><?php echo $related['ten_sp']; ?></h6>
                             </a>
-                            <p>$100.00
-                                <del>$140.00</del><span>-20%</span>
+                            <p><?php echo $related['don_gia']; ?>
+                                <del><?php echo $related['gia_km']; ?></del><span>-20%</span>
                             </p>
                         </div>
                     </div>
+
                 </div>
-                <div class="swiper-slide">
+                <?php endforeach; ?>
+                <!-- <div class="swiper-slide">
                     <div class="product-box-3">
                         <div class="img-wrapper">
                             <div class="label-block"><span class="lable-1">NEW</span><a class="label-2 wishlist-icon"
@@ -886,7 +751,7 @@
                             </p>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

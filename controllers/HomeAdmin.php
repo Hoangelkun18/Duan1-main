@@ -422,7 +422,7 @@ class HomeAdmin {
             $ten_km = $_POST['ten_km'];
             $ma_km = $_POST['ma_km'];
             $ngay_bat_dau = $_POST['ngay_bat_dau'];
-$ngay_ket_thuc = $_POST['ngay_ket_thuc'];
+            $ngay_ket_thuc = $_POST['ngay_ket_thuc'];
             $loai_km = $_POST['loai_km'];
             $trang_thai = $_POST['trang_thai'];
 
@@ -446,5 +446,38 @@ $ngay_ket_thuc = $_POST['ngay_ket_thuc'];
         }
 
     }
+    public function customer() {
+        require_once './models/admin/Customer.php';
+        $customerModel = new Customer($this->db);
+        $customers = $customerModel->getAll();
+        
+        $title = 'customer';
+        $view = 'customer/list';
+        require_once './views/admin/main.php';
+    }
+
+    public function customerDelete() {
+        if (isset($_GET['id'])) {
+            $id = $_GET['id'];
+            require_once './models/admin/customer.php';
+            $customerModel = new Customer($this->db);
+            $result = $customerModel->delete($id);
+            
+            if ($result) {
+                $_SESSION['success_message'] = "Xóa tài khoản thành công!";
+            } else {
+                $_SESSION['error_message'] = "Không thể xóa tài khoản. Vui lòng thử lại!";
+            }
+        }
+        header('Location: ?act=customer');
+        exit();
+    }
+
+    public function customerCreate() {
+        $view = 'customer/create';
+        $title = 'customer create';
+        require_once './views/admin/main.php';
+    }
+
 }
 ?>
